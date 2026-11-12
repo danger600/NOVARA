@@ -1,0 +1,105 @@
+import { useMemo, useState } from "react";
+import { Ionicons } from "@expo/vector-icons";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { theme } from "@/constants/theme";
+
+type FeatureItem = { title: string; detail: string };
+type Props = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  icon: keyof typeof Ionicons.glyphMap;
+  items: FeatureItem[];
+  editable?: boolean;
+  inputHint?: string;
+  previewNote?: string;
+};
+
+export function FeatureScreen({ eyebrow, title, description, icon, items, editable = false, inputHint = "Add a new item…", previewNote }: Props) {
+  const [records, setRecords] = useState(() => items.map((item, index) => ({ ...item, id: String(index), done: false })));
+  const [query, setQuery] = useState("");
+  const [draft, setDraft] = useState("");
+  const visible = useMemo(() => records.filter((item) => (item.title + " " + item.detail).toLowerCase().includes(query.toLowerCase())), [records, query]);
+  const completed = records.filter((item) => item.done).length;
+
+  const addItem = () => {
+    const value = draft.trim();
+    if (!value) return;
+    setRecords((current) => [{ id: String(Date.now()), title: value, detail: "Added in this device preview", done: false }, ...current]);
+    setDraft("");
+  };
+
+  const toggleItem = (id: string) => setRecords((current) => current.map((item) => item.id === id ? { ...item, done: !item.done } : item));
+
+  return (
+    <SafeAreaView style={styles.safe} edges={["top"]}>
+      <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
+        <View style={styles.header}>
+          <View style={styles.brand}><View style={styles.brandIcon}><Ionicons name="aperture" size={18} color={theme.colors.gold} /></View><Text style={styles.brandText}>NOVARA</Text></View>
+          <View style={styles.previewPill}><View style={styles.dot} /><Text style={styles.previewText}>PREVIEW MODE</Text></View>
+        </View>
+        <Text style={styles.kicker}>{eyebrow}</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+        <View style={styles.summary}>
+          <View style={styles.summaryIcon}><Ionicons name={icon} size={22} color={theme.colors.goldDeep} /></View>
+          <View style={{ flex: 1 }}><Text style={styles.summaryTitle}>{editable ? "Your personal space" : "Explore this workspace"}</Text><Text style={styles.summarySub}>{editable ? `${completed} of ${records.length} completed` : `${records.length} capabilities to explore`}</Text></View>
+          <Text style={styles.summaryCount}>{records.length}</Text>
+        </View>
+        {editable && <View style={styles.addRow}><TextInput value={draft} onChangeText={setDraft} onSubmitEditing={addItem} placeholder={inputHint} placeholderTextColor={theme.colors.muted} style={styles.input} returnKeyType="done" /><Pressable accessibilityRole="button" accessibilityLabel="Add item" onPress={addItem} style={styles.addButton}><Ionicons name="add" size={22} color="#FFFFFF" /></Pressable></View>}
+        <View style={styles.search}><Ionicons name="search-outline" size={18} color={theme.colors.muted} /><TextInput value={query} onChangeText={setQuery} placeholder="Search this page…" placeholderTextColor={theme.colors.muted} style={styles.searchInput} /></View>
+        <View style={styles.listHeader}><Text style={styles.listTitle}>{editable ? "Your items" : "Available tools"}</Text><Text style={styles.listMeta}>{visible.length} shown</Text></View>
+        {visible.map((item) => (
+          <Pressable key={item.id} accessibilityRole="button" accessibilityState={{ checked: item.done }} onPress={() => toggleItem(item.id)} style={styles.item}>
+            <View style={[styles.itemIcon, item.done && styles.itemIconDone]}><Ionicons name={item.done ? "checkmark" : "chevron-forward"} size={18} color={item.done ? "#FFFFFF" : theme.colors.navy} /></View>
+            <View style={{ flex: 1 }}><Text style={[styles.itemTitle, item.done && styles.done]}>{item.title}</Text><Text style={styles.itemDetail}>{item.detail}</Text></View>
+            <Ionicons name={item.done ? "checkmark-circle" : "ellipse-outline"} size={19} color={item.done ? theme.colors.success : theme.colors.muted} />
+          </Pressable>
+        ))}
+        {visible.length === 0 && <View style={styles.empty}><Ionicons name="search-outline" size={25} color={theme.colors.muted} /><Text style={styles.emptyText}>No matching items. Try another search.</Text></View>}
+        <View style={styles.notice}><Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} /><Text style={styles.noticeText}>{previewNote ?? "Preview data is stored only in this screen's memory. Sign-in, cloud sync, and production services are not connected yet."}</Text></View>
+        <Text style={styles.footer}>NOVARA · ONE PLATFORM. INFINITE POSSIBILITIES.</Text>
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  safe: { flex: 1, backgroundColor: theme.colors.background },
+  content: { padding: 20, paddingBottom: 40, gap: 14, width: "100%", maxWidth: 920, alignSelf: "center" },
+  header: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 12 },
+  brand: { flexDirection: "row", alignItems: "center", gap: 9 },
+  brandIcon: { width: 34, height: 34, borderRadius: 11, backgroundColor: theme.colors.navy, alignItems: "center", justifyContent: "center" },
+  brandText: { color: theme.colors.navy, fontSize: 14, fontWeight: "900", letterSpacing: 2.5 },
+  previewPill: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: "#F1EBDD", borderRadius: 20, paddingHorizontal: 10, paddingVertical: 7 },
+  dot: { width: 6, height: 6, borderRadius: 3, backgroundColor: theme.colors.goldDeep },
+  previewText: { color: theme.colors.navy, fontSize: 9, fontWeight: "800", letterSpacing: 0.7 },
+  kicker: { color: theme.colors.goldDeep, fontSize: 10, fontWeight: "900", letterSpacing: 2 },
+  title: { color: theme.colors.navy, fontSize: 32, fontWeight: "900" },
+  description: { color: theme.colors.muted, fontSize: 13, lineHeight: 20, marginBottom: 5 },
+  summary: { flexDirection: "row", alignItems: "center", gap: 13, backgroundColor: theme.colors.navy, borderRadius: 20, padding: 17, marginVertical: 4 },
+  summaryIcon: { width: 44, height: 44, borderRadius: 14, backgroundColor: "#2A3A56", alignItems: "center", justifyContent: "center" },
+  summaryTitle: { color: "#FFFFFF", fontSize: 13, fontWeight: "800" },
+  summarySub: { color: "#C7D0DE", fontSize: 10, marginTop: 5 },
+  summaryCount: { color: theme.colors.gold, fontSize: 24, fontWeight: "900" },
+  addRow: { flexDirection: "row", gap: 9 },
+  input: { flex: 1, minHeight: 48, borderRadius: 14, borderWidth: 1, borderColor: theme.colors.border, backgroundColor: theme.colors.surface, paddingHorizontal: 14, color: theme.colors.text, fontSize: 13 },
+  addButton: { width: 48, borderRadius: 14, backgroundColor: theme.colors.navy, alignItems: "center", justifyContent: "center" },
+  search: { flexDirection: "row", alignItems: "center", gap: 9, backgroundColor: theme.colors.surface, borderWidth: 1, borderColor: theme.colors.border, borderRadius: 14, paddingHorizontal: 13, minHeight: 46 },
+  searchInput: { flex: 1, color: theme.colors.text, fontSize: 12, paddingVertical: 10 },
+  listHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 5 },
+  listTitle: { color: theme.colors.text, fontSize: 15, fontWeight: "900" },
+  listMeta: { color: theme.colors.muted, fontSize: 10 },
+  item: { flexDirection: "row", alignItems: "center", gap: 12, backgroundColor: theme.colors.surface, borderRadius: 16, borderWidth: 1, borderColor: theme.colors.border, padding: 14 },
+  itemIcon: { width: 36, height: 36, borderRadius: 12, backgroundColor: "#F1EBDD", alignItems: "center", justifyContent: "center" },
+  itemIconDone: { backgroundColor: theme.colors.success },
+  itemTitle: { color: theme.colors.text, fontSize: 12, fontWeight: "800" },
+  done: { textDecorationLine: "line-through", color: theme.colors.muted },
+  itemDetail: { color: theme.colors.muted, fontSize: 10, lineHeight: 15, marginTop: 4 },
+  empty: { alignItems: "center", gap: 9, padding: 24 },
+  emptyText: { color: theme.colors.muted, fontSize: 11 },
+  notice: { flexDirection: "row", gap: 9, alignItems: "flex-start", backgroundColor: "#E9F0FA", borderRadius: 14, padding: 13, marginTop: 4 },
+  noticeText: { flex: 1, color: theme.colors.navy, fontSize: 10, lineHeight: 16 },
+  footer: { color: theme.colors.muted, fontSize: 9, letterSpacing: 1.2, textAlign: "center", marginTop: 12 },
+});
