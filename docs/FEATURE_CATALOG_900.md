@@ -1,0 +1,1001 @@
+# NOVARA — 900-capability product roadmap
+
+**Status: proposed roadmap, not implemented functionality.** This catalog defines a long-term scope for NOVARA. Each item must be designed, implemented, tested, secured, and documented before it can be marked complete.
+
+- Product areas: 30
+- Capabilities per area: 30
+- Total planned capabilities: 900
+
+## Delivery rule
+
+A capability is only counted as implemented when its complete user flow works, data is handled correctly, permissions and failure states are covered, accessibility is considered, and automated or documented tests pass. Items below are planned until verified.
+
+## Tasks and productivity
+
+- [ ] NVR-001 — Tasks and productivity: Create and capture
+- [ ] NVR-002 — Tasks and productivity: Edit and revise
+- [ ] NVR-003 — Tasks and productivity: Archive and restore
+- [ ] NVR-004 — Tasks and productivity: Duplicate and reuse
+- [ ] NVR-005 — Tasks and productivity: Templates and presets
+- [ ] NVR-006 — Tasks and productivity: Advanced search
+- [ ] NVR-007 — Tasks and productivity: Filters and saved views
+- [ ] NVR-008 — Tasks and productivity: Sorting and grouping
+- [ ] NVR-009 — Tasks and productivity: Tags and labels
+- [ ] NVR-010 — Tasks and productivity: Favorites and pinning
+- [ ] NVR-011 — Tasks and productivity: Reminders and due dates
+- [ ] NVR-012 — Tasks and productivity: Comments and discussions
+- [ ] NVR-013 — Tasks and productivity: Attachments and media
+- [ ] NVR-014 — Tasks and productivity: Sharing and collaboration
+- [ ] NVR-015 — Tasks and productivity: Import and export
+- [ ] NVR-016 — Tasks and productivity: Activity history
+- [ ] NVR-017 — Tasks and productivity: Version history
+- [ ] NVR-018 — Tasks and productivity: Role-based permissions
+- [ ] NVR-019 — Tasks and productivity: Bulk actions
+- [ ] NVR-020 — Tasks and productivity: Validation and quality rules
+- [ ] NVR-021 — Tasks and productivity: Offline access
+- [ ] NVR-022 — Tasks and productivity: Cross-device synchronization
+- [ ] NVR-023 — Tasks and productivity: Automation rules
+- [ ] NVR-024 — Tasks and productivity: Analytics and insights
+- [ ] NVR-025 — Tasks and productivity: Custom dashboard widgets
+- [ ] NVR-026 — Tasks and productivity: Notifications and alerts
+- [ ] NVR-027 — Tasks and productivity: Accessibility controls
+- [ ] NVR-028 — Tasks and productivity: Localization and regional formats
+- [ ] NVR-029 — Tasks and productivity: API and integrations
+- [ ] NVR-030 — Tasks and productivity: Backup and recovery
+
+## Projects and portfolios
+
+- [ ] NVR-031 — Projects and portfolios: Create and capture
+- [ ] NVR-032 — Projects and portfolios: Edit and revise
+- [ ] NVR-033 — Projects and portfolios: Archive and restore
+- [ ] NVR-034 — Projects and portfolios: Duplicate and reuse
+- [ ] NVR-035 — Projects and portfolios: Templates and presets
+- [ ] NVR-036 — Projects and portfolios: Advanced search
+- [ ] NVR-037 — Projects and portfolios: Filters and saved views
+- [ ] NVR-038 — Projects and portfolios: Sorting and grouping
+- [ ] NVR-039 — Projects and portfolios: Tags and labels
+- [ ] NVR-040 — Projects and portfolios: Favorites and pinning
+- [ ] NVR-041 — Projects and portfolios: Reminders and due dates
+- [ ] NVR-042 — Projects and portfolios: Comments and discussions
+- [ ] NVR-043 — Projects and portfolios: Attachments and media
+- [ ] NVR-044 — Projects and portfolios: Sharing and collaboration
+- [ ] NVR-045 — Projects and portfolios: Import and export
+- [ ] NVR-046 — Projects and portfolios: Activity history
+- [ ] NVR-047 — Projects and portfolios: Version history
+- [ ] NVR-048 — Projects and portfolios: Role-based permissions
+- [ ] NVR-049 — Projects and portfolios: Bulk actions
+- [ ] NVR-050 — Projects and portfolios: Validation and quality rules
+- [ ] NVR-051 — Projects and portfolios: Offline access
+- [ ] NVR-052 — Projects and portfolios: Cross-device synchronization
+- [ ] NVR-053 — Projects and portfolios: Automation rules
+- [ ] NVR-054 — Projects and portfolios: Analytics and insights
+- [ ] NVR-055 — Projects and portfolios: Custom dashboard widgets
+- [ ] NVR-056 — Projects and portfolios: Notifications and alerts
+- [ ] NVR-057 — Projects and portfolios: Accessibility controls
+- [ ] NVR-058 — Projects and portfolios: Localization and regional formats
+- [ ] NVR-059 — Projects and portfolios: API and integrations
+- [ ] NVR-060 — Projects and portfolios: Backup and recovery
+
+## Notes and knowledge
+
+- [ ] NVR-061 — Notes and knowledge: Create and capture
+- [ ] NVR-062 — Notes and knowledge: Edit and revise
+- [ ] NVR-063 — Notes and knowledge: Archive and restore
+- [ ] NVR-064 — Notes and knowledge: Duplicate and reuse
+- [ ] NVR-065 — Notes and knowledge: Templates and presets
+- [ ] NVR-066 — Notes and knowledge: Advanced search
+- [ ] NVR-067 — Notes and knowledge: Filters and saved views
+- [ ] NVR-068 — Notes and knowledge: Sorting and grouping
+- [ ] NVR-069 — Notes and knowledge: Tags and labels
+- [ ] NVR-070 — Notes and knowledge: Favorites and pinning
+- [ ] NVR-071 — Notes and knowledge: Reminders and due dates
+- [ ] NVR-072 — Notes and knowledge: Comments and discussions
+- [ ] NVR-073 — Notes and knowledge: Attachments and media
+- [ ] NVR-074 — Notes and knowledge: Sharing and collaboration
+- [ ] NVR-075 — Notes and knowledge: Import and export
+- [ ] NVR-076 — Notes and knowledge: Activity history
+- [ ] NVR-077 — Notes and knowledge: Version history
+- [ ] NVR-078 — Notes and knowledge: Role-based permissions
+- [ ] NVR-079 — Notes and knowledge: Bulk actions
+- [ ] NVR-080 — Notes and knowledge: Validation and quality rules
+- [ ] NVR-081 — Notes and knowledge: Offline access
+- [ ] NVR-082 — Notes and knowledge: Cross-device synchronization
+- [ ] NVR-083 — Notes and knowledge: Automation rules
+- [ ] NVR-084 — Notes and knowledge: Analytics and insights
+- [ ] NVR-085 — Notes and knowledge: Custom dashboard widgets
+- [ ] NVR-086 — Notes and knowledge: Notifications and alerts
+- [ ] NVR-087 — Notes and knowledge: Accessibility controls
+- [ ] NVR-088 — Notes and knowledge: Localization and regional formats
+- [ ] NVR-089 — Notes and knowledge: API and integrations
+- [ ] NVR-090 — Notes and knowledge: Backup and recovery
+
+## Goals and habits
+
+- [ ] NVR-091 — Goals and habits: Create and capture
+- [ ] NVR-092 — Goals and habits: Edit and revise
+- [ ] NVR-093 — Goals and habits: Archive and restore
+- [ ] NVR-094 — Goals and habits: Duplicate and reuse
+- [ ] NVR-095 — Goals and habits: Templates and presets
+- [ ] NVR-096 — Goals and habits: Advanced search
+- [ ] NVR-097 — Goals and habits: Filters and saved views
+- [ ] NVR-098 — Goals and habits: Sorting and grouping
+- [ ] NVR-099 — Goals and habits: Tags and labels
+- [ ] NVR-100 — Goals and habits: Favorites and pinning
+- [ ] NVR-101 — Goals and habits: Reminders and due dates
+- [ ] NVR-102 — Goals and habits: Comments and discussions
+- [ ] NVR-103 — Goals and habits: Attachments and media
+- [ ] NVR-104 — Goals and habits: Sharing and collaboration
+- [ ] NVR-105 — Goals and habits: Import and export
+- [ ] NVR-106 — Goals and habits: Activity history
+- [ ] NVR-107 — Goals and habits: Version history
+- [ ] NVR-108 — Goals and habits: Role-based permissions
+- [ ] NVR-109 — Goals and habits: Bulk actions
+- [ ] NVR-110 — Goals and habits: Validation and quality rules
+- [ ] NVR-111 — Goals and habits: Offline access
+- [ ] NVR-112 — Goals and habits: Cross-device synchronization
+- [ ] NVR-113 — Goals and habits: Automation rules
+- [ ] NVR-114 — Goals and habits: Analytics and insights
+- [ ] NVR-115 — Goals and habits: Custom dashboard widgets
+- [ ] NVR-116 — Goals and habits: Notifications and alerts
+- [ ] NVR-117 — Goals and habits: Accessibility controls
+- [ ] NVR-118 — Goals and habits: Localization and regional formats
+- [ ] NVR-119 — Goals and habits: API and integrations
+- [ ] NVR-120 — Goals and habits: Backup and recovery
+
+## Calendar and scheduling
+
+- [ ] NVR-121 — Calendar and scheduling: Create and capture
+- [ ] NVR-122 — Calendar and scheduling: Edit and revise
+- [ ] NVR-123 — Calendar and scheduling: Archive and restore
+- [ ] NVR-124 — Calendar and scheduling: Duplicate and reuse
+- [ ] NVR-125 — Calendar and scheduling: Templates and presets
+- [ ] NVR-126 — Calendar and scheduling: Advanced search
+- [ ] NVR-127 — Calendar and scheduling: Filters and saved views
+- [ ] NVR-128 — Calendar and scheduling: Sorting and grouping
+- [ ] NVR-129 — Calendar and scheduling: Tags and labels
+- [ ] NVR-130 — Calendar and scheduling: Favorites and pinning
+- [ ] NVR-131 — Calendar and scheduling: Reminders and due dates
+- [ ] NVR-132 — Calendar and scheduling: Comments and discussions
+- [ ] NVR-133 — Calendar and scheduling: Attachments and media
+- [ ] NVR-134 — Calendar and scheduling: Sharing and collaboration
+- [ ] NVR-135 — Calendar and scheduling: Import and export
+- [ ] NVR-136 — Calendar and scheduling: Activity history
+- [ ] NVR-137 — Calendar and scheduling: Version history
+- [ ] NVR-138 — Calendar and scheduling: Role-based permissions
+- [ ] NVR-139 — Calendar and scheduling: Bulk actions
+- [ ] NVR-140 — Calendar and scheduling: Validation and quality rules
+- [ ] NVR-141 — Calendar and scheduling: Offline access
+- [ ] NVR-142 — Calendar and scheduling: Cross-device synchronization
+- [ ] NVR-143 — Calendar and scheduling: Automation rules
+- [ ] NVR-144 — Calendar and scheduling: Analytics and insights
+- [ ] NVR-145 — Calendar and scheduling: Custom dashboard widgets
+- [ ] NVR-146 — Calendar and scheduling: Notifications and alerts
+- [ ] NVR-147 — Calendar and scheduling: Accessibility controls
+- [ ] NVR-148 — Calendar and scheduling: Localization and regional formats
+- [ ] NVR-149 — Calendar and scheduling: API and integrations
+- [ ] NVR-150 — Calendar and scheduling: Backup and recovery
+
+## Learning and courses
+
+- [ ] NVR-151 — Learning and courses: Create and capture
+- [ ] NVR-152 — Learning and courses: Edit and revise
+- [ ] NVR-153 — Learning and courses: Archive and restore
+- [ ] NVR-154 — Learning and courses: Duplicate and reuse
+- [ ] NVR-155 — Learning and courses: Templates and presets
+- [ ] NVR-156 — Learning and courses: Advanced search
+- [ ] NVR-157 — Learning and courses: Filters and saved views
+- [ ] NVR-158 — Learning and courses: Sorting and grouping
+- [ ] NVR-159 — Learning and courses: Tags and labels
+- [ ] NVR-160 — Learning and courses: Favorites and pinning
+- [ ] NVR-161 — Learning and courses: Reminders and due dates
+- [ ] NVR-162 — Learning and courses: Comments and discussions
+- [ ] NVR-163 — Learning and courses: Attachments and media
+- [ ] NVR-164 — Learning and courses: Sharing and collaboration
+- [ ] NVR-165 — Learning and courses: Import and export
+- [ ] NVR-166 — Learning and courses: Activity history
+- [ ] NVR-167 — Learning and courses: Version history
+- [ ] NVR-168 — Learning and courses: Role-based permissions
+- [ ] NVR-169 — Learning and courses: Bulk actions
+- [ ] NVR-170 — Learning and courses: Validation and quality rules
+- [ ] NVR-171 — Learning and courses: Offline access
+- [ ] NVR-172 — Learning and courses: Cross-device synchronization
+- [ ] NVR-173 — Learning and courses: Automation rules
+- [ ] NVR-174 — Learning and courses: Analytics and insights
+- [ ] NVR-175 — Learning and courses: Custom dashboard widgets
+- [ ] NVR-176 — Learning and courses: Notifications and alerts
+- [ ] NVR-177 — Learning and courses: Accessibility controls
+- [ ] NVR-178 — Learning and courses: Localization and regional formats
+- [ ] NVR-179 — Learning and courses: API and integrations
+- [ ] NVR-180 — Learning and courses: Backup and recovery
+
+## Business operations
+
+- [ ] NVR-181 — Business operations: Create and capture
+- [ ] NVR-182 — Business operations: Edit and revise
+- [ ] NVR-183 — Business operations: Archive and restore
+- [ ] NVR-184 — Business operations: Duplicate and reuse
+- [ ] NVR-185 — Business operations: Templates and presets
+- [ ] NVR-186 — Business operations: Advanced search
+- [ ] NVR-187 — Business operations: Filters and saved views
+- [ ] NVR-188 — Business operations: Sorting and grouping
+- [ ] NVR-189 — Business operations: Tags and labels
+- [ ] NVR-190 — Business operations: Favorites and pinning
+- [ ] NVR-191 — Business operations: Reminders and due dates
+- [ ] NVR-192 — Business operations: Comments and discussions
+- [ ] NVR-193 — Business operations: Attachments and media
+- [ ] NVR-194 — Business operations: Sharing and collaboration
+- [ ] NVR-195 — Business operations: Import and export
+- [ ] NVR-196 — Business operations: Activity history
+- [ ] NVR-197 — Business operations: Version history
+- [ ] NVR-198 — Business operations: Role-based permissions
+- [ ] NVR-199 — Business operations: Bulk actions
+- [ ] NVR-200 — Business operations: Validation and quality rules
+- [ ] NVR-201 — Business operations: Offline access
+- [ ] NVR-202 — Business operations: Cross-device synchronization
+- [ ] NVR-203 — Business operations: Automation rules
+- [ ] NVR-204 — Business operations: Analytics and insights
+- [ ] NVR-205 — Business operations: Custom dashboard widgets
+- [ ] NVR-206 — Business operations: Notifications and alerts
+- [ ] NVR-207 — Business operations: Accessibility controls
+- [ ] NVR-208 — Business operations: Localization and regional formats
+- [ ] NVR-209 — Business operations: API and integrations
+- [ ] NVR-210 — Business operations: Backup and recovery
+
+## Customer relationships
+
+- [ ] NVR-211 — Customer relationships: Create and capture
+- [ ] NVR-212 — Customer relationships: Edit and revise
+- [ ] NVR-213 — Customer relationships: Archive and restore
+- [ ] NVR-214 — Customer relationships: Duplicate and reuse
+- [ ] NVR-215 — Customer relationships: Templates and presets
+- [ ] NVR-216 — Customer relationships: Advanced search
+- [ ] NVR-217 — Customer relationships: Filters and saved views
+- [ ] NVR-218 — Customer relationships: Sorting and grouping
+- [ ] NVR-219 — Customer relationships: Tags and labels
+- [ ] NVR-220 — Customer relationships: Favorites and pinning
+- [ ] NVR-221 — Customer relationships: Reminders and due dates
+- [ ] NVR-222 — Customer relationships: Comments and discussions
+- [ ] NVR-223 — Customer relationships: Attachments and media
+- [ ] NVR-224 — Customer relationships: Sharing and collaboration
+- [ ] NVR-225 — Customer relationships: Import and export
+- [ ] NVR-226 — Customer relationships: Activity history
+- [ ] NVR-227 — Customer relationships: Version history
+- [ ] NVR-228 — Customer relationships: Role-based permissions
+- [ ] NVR-229 — Customer relationships: Bulk actions
+- [ ] NVR-230 — Customer relationships: Validation and quality rules
+- [ ] NVR-231 — Customer relationships: Offline access
+- [ ] NVR-232 — Customer relationships: Cross-device synchronization
+- [ ] NVR-233 — Customer relationships: Automation rules
+- [ ] NVR-234 — Customer relationships: Analytics and insights
+- [ ] NVR-235 — Customer relationships: Custom dashboard widgets
+- [ ] NVR-236 — Customer relationships: Notifications and alerts
+- [ ] NVR-237 — Customer relationships: Accessibility controls
+- [ ] NVR-238 — Customer relationships: Localization and regional formats
+- [ ] NVR-239 — Customer relationships: API and integrations
+- [ ] NVR-240 — Customer relationships: Backup and recovery
+
+## Team collaboration
+
+- [ ] NVR-241 — Team collaboration: Create and capture
+- [ ] NVR-242 — Team collaboration: Edit and revise
+- [ ] NVR-243 — Team collaboration: Archive and restore
+- [ ] NVR-244 — Team collaboration: Duplicate and reuse
+- [ ] NVR-245 — Team collaboration: Templates and presets
+- [ ] NVR-246 — Team collaboration: Advanced search
+- [ ] NVR-247 — Team collaboration: Filters and saved views
+- [ ] NVR-248 — Team collaboration: Sorting and grouping
+- [ ] NVR-249 — Team collaboration: Tags and labels
+- [ ] NVR-250 — Team collaboration: Favorites and pinning
+- [ ] NVR-251 — Team collaboration: Reminders and due dates
+- [ ] NVR-252 — Team collaboration: Comments and discussions
+- [ ] NVR-253 — Team collaboration: Attachments and media
+- [ ] NVR-254 — Team collaboration: Sharing and collaboration
+- [ ] NVR-255 — Team collaboration: Import and export
+- [ ] NVR-256 — Team collaboration: Activity history
+- [ ] NVR-257 — Team collaboration: Version history
+- [ ] NVR-258 — Team collaboration: Role-based permissions
+- [ ] NVR-259 — Team collaboration: Bulk actions
+- [ ] NVR-260 — Team collaboration: Validation and quality rules
+- [ ] NVR-261 — Team collaboration: Offline access
+- [ ] NVR-262 — Team collaboration: Cross-device synchronization
+- [ ] NVR-263 — Team collaboration: Automation rules
+- [ ] NVR-264 — Team collaboration: Analytics and insights
+- [ ] NVR-265 — Team collaboration: Custom dashboard widgets
+- [ ] NVR-266 — Team collaboration: Notifications and alerts
+- [ ] NVR-267 — Team collaboration: Accessibility controls
+- [ ] NVR-268 — Team collaboration: Localization and regional formats
+- [ ] NVR-269 — Team collaboration: API and integrations
+- [ ] NVR-270 — Team collaboration: Backup and recovery
+
+## Messaging and community
+
+- [ ] NVR-271 — Messaging and community: Create and capture
+- [ ] NVR-272 — Messaging and community: Edit and revise
+- [ ] NVR-273 — Messaging and community: Archive and restore
+- [ ] NVR-274 — Messaging and community: Duplicate and reuse
+- [ ] NVR-275 — Messaging and community: Templates and presets
+- [ ] NVR-276 — Messaging and community: Advanced search
+- [ ] NVR-277 — Messaging and community: Filters and saved views
+- [ ] NVR-278 — Messaging and community: Sorting and grouping
+- [ ] NVR-279 — Messaging and community: Tags and labels
+- [ ] NVR-280 — Messaging and community: Favorites and pinning
+- [ ] NVR-281 — Messaging and community: Reminders and due dates
+- [ ] NVR-282 — Messaging and community: Comments and discussions
+- [ ] NVR-283 — Messaging and community: Attachments and media
+- [ ] NVR-284 — Messaging and community: Sharing and collaboration
+- [ ] NVR-285 — Messaging and community: Import and export
+- [ ] NVR-286 — Messaging and community: Activity history
+- [ ] NVR-287 — Messaging and community: Version history
+- [ ] NVR-288 — Messaging and community: Role-based permissions
+- [ ] NVR-289 — Messaging and community: Bulk actions
+- [ ] NVR-290 — Messaging and community: Validation and quality rules
+- [ ] NVR-291 — Messaging and community: Offline access
+- [ ] NVR-292 — Messaging and community: Cross-device synchronization
+- [ ] NVR-293 — Messaging and community: Automation rules
+- [ ] NVR-294 — Messaging and community: Analytics and insights
+- [ ] NVR-295 — Messaging and community: Custom dashboard widgets
+- [ ] NVR-296 — Messaging and community: Notifications and alerts
+- [ ] NVR-297 — Messaging and community: Accessibility controls
+- [ ] NVR-298 — Messaging and community: Localization and regional formats
+- [ ] NVR-299 — Messaging and community: API and integrations
+- [ ] NVR-300 — Messaging and community: Backup and recovery
+
+## AI assistants and prompts
+
+- [ ] NVR-301 — AI assistants and prompts: Create and capture
+- [ ] NVR-302 — AI assistants and prompts: Edit and revise
+- [ ] NVR-303 — AI assistants and prompts: Archive and restore
+- [ ] NVR-304 — AI assistants and prompts: Duplicate and reuse
+- [ ] NVR-305 — AI assistants and prompts: Templates and presets
+- [ ] NVR-306 — AI assistants and prompts: Advanced search
+- [ ] NVR-307 — AI assistants and prompts: Filters and saved views
+- [ ] NVR-308 — AI assistants and prompts: Sorting and grouping
+- [ ] NVR-309 — AI assistants and prompts: Tags and labels
+- [ ] NVR-310 — AI assistants and prompts: Favorites and pinning
+- [ ] NVR-311 — AI assistants and prompts: Reminders and due dates
+- [ ] NVR-312 — AI assistants and prompts: Comments and discussions
+- [ ] NVR-313 — AI assistants and prompts: Attachments and media
+- [ ] NVR-314 — AI assistants and prompts: Sharing and collaboration
+- [ ] NVR-315 — AI assistants and prompts: Import and export
+- [ ] NVR-316 — AI assistants and prompts: Activity history
+- [ ] NVR-317 — AI assistants and prompts: Version history
+- [ ] NVR-318 — AI assistants and prompts: Role-based permissions
+- [ ] NVR-319 — AI assistants and prompts: Bulk actions
+- [ ] NVR-320 — AI assistants and prompts: Validation and quality rules
+- [ ] NVR-321 — AI assistants and prompts: Offline access
+- [ ] NVR-322 — AI assistants and prompts: Cross-device synchronization
+- [ ] NVR-323 — AI assistants and prompts: Automation rules
+- [ ] NVR-324 — AI assistants and prompts: Analytics and insights
+- [ ] NVR-325 — AI assistants and prompts: Custom dashboard widgets
+- [ ] NVR-326 — AI assistants and prompts: Notifications and alerts
+- [ ] NVR-327 — AI assistants and prompts: Accessibility controls
+- [ ] NVR-328 — AI assistants and prompts: Localization and regional formats
+- [ ] NVR-329 — AI assistants and prompts: API and integrations
+- [ ] NVR-330 — AI assistants and prompts: Backup and recovery
+
+## Analytics and reporting
+
+- [ ] NVR-331 — Analytics and reporting: Create and capture
+- [ ] NVR-332 — Analytics and reporting: Edit and revise
+- [ ] NVR-333 — Analytics and reporting: Archive and restore
+- [ ] NVR-334 — Analytics and reporting: Duplicate and reuse
+- [ ] NVR-335 — Analytics and reporting: Templates and presets
+- [ ] NVR-336 — Analytics and reporting: Advanced search
+- [ ] NVR-337 — Analytics and reporting: Filters and saved views
+- [ ] NVR-338 — Analytics and reporting: Sorting and grouping
+- [ ] NVR-339 — Analytics and reporting: Tags and labels
+- [ ] NVR-340 — Analytics and reporting: Favorites and pinning
+- [ ] NVR-341 — Analytics and reporting: Reminders and due dates
+- [ ] NVR-342 — Analytics and reporting: Comments and discussions
+- [ ] NVR-343 — Analytics and reporting: Attachments and media
+- [ ] NVR-344 — Analytics and reporting: Sharing and collaboration
+- [ ] NVR-345 — Analytics and reporting: Import and export
+- [ ] NVR-346 — Analytics and reporting: Activity history
+- [ ] NVR-347 — Analytics and reporting: Version history
+- [ ] NVR-348 — Analytics and reporting: Role-based permissions
+- [ ] NVR-349 — Analytics and reporting: Bulk actions
+- [ ] NVR-350 — Analytics and reporting: Validation and quality rules
+- [ ] NVR-351 — Analytics and reporting: Offline access
+- [ ] NVR-352 — Analytics and reporting: Cross-device synchronization
+- [ ] NVR-353 — Analytics and reporting: Automation rules
+- [ ] NVR-354 — Analytics and reporting: Analytics and insights
+- [ ] NVR-355 — Analytics and reporting: Custom dashboard widgets
+- [ ] NVR-356 — Analytics and reporting: Notifications and alerts
+- [ ] NVR-357 — Analytics and reporting: Accessibility controls
+- [ ] NVR-358 — Analytics and reporting: Localization and regional formats
+- [ ] NVR-359 — Analytics and reporting: API and integrations
+- [ ] NVR-360 — Analytics and reporting: Backup and recovery
+
+## Documents and files
+
+- [ ] NVR-361 — Documents and files: Create and capture
+- [ ] NVR-362 — Documents and files: Edit and revise
+- [ ] NVR-363 — Documents and files: Archive and restore
+- [ ] NVR-364 — Documents and files: Duplicate and reuse
+- [ ] NVR-365 — Documents and files: Templates and presets
+- [ ] NVR-366 — Documents and files: Advanced search
+- [ ] NVR-367 — Documents and files: Filters and saved views
+- [ ] NVR-368 — Documents and files: Sorting and grouping
+- [ ] NVR-369 — Documents and files: Tags and labels
+- [ ] NVR-370 — Documents and files: Favorites and pinning
+- [ ] NVR-371 — Documents and files: Reminders and due dates
+- [ ] NVR-372 — Documents and files: Comments and discussions
+- [ ] NVR-373 — Documents and files: Attachments and media
+- [ ] NVR-374 — Documents and files: Sharing and collaboration
+- [ ] NVR-375 — Documents and files: Import and export
+- [ ] NVR-376 — Documents and files: Activity history
+- [ ] NVR-377 — Documents and files: Version history
+- [ ] NVR-378 — Documents and files: Role-based permissions
+- [ ] NVR-379 — Documents and files: Bulk actions
+- [ ] NVR-380 — Documents and files: Validation and quality rules
+- [ ] NVR-381 — Documents and files: Offline access
+- [ ] NVR-382 — Documents and files: Cross-device synchronization
+- [ ] NVR-383 — Documents and files: Automation rules
+- [ ] NVR-384 — Documents and files: Analytics and insights
+- [ ] NVR-385 — Documents and files: Custom dashboard widgets
+- [ ] NVR-386 — Documents and files: Notifications and alerts
+- [ ] NVR-387 — Documents and files: Accessibility controls
+- [ ] NVR-388 — Documents and files: Localization and regional formats
+- [ ] NVR-389 — Documents and files: API and integrations
+- [ ] NVR-390 — Documents and files: Backup and recovery
+
+## Media and creative studio
+
+- [ ] NVR-391 — Media and creative studio: Create and capture
+- [ ] NVR-392 — Media and creative studio: Edit and revise
+- [ ] NVR-393 — Media and creative studio: Archive and restore
+- [ ] NVR-394 — Media and creative studio: Duplicate and reuse
+- [ ] NVR-395 — Media and creative studio: Templates and presets
+- [ ] NVR-396 — Media and creative studio: Advanced search
+- [ ] NVR-397 — Media and creative studio: Filters and saved views
+- [ ] NVR-398 — Media and creative studio: Sorting and grouping
+- [ ] NVR-399 — Media and creative studio: Tags and labels
+- [ ] NVR-400 — Media and creative studio: Favorites and pinning
+- [ ] NVR-401 — Media and creative studio: Reminders and due dates
+- [ ] NVR-402 — Media and creative studio: Comments and discussions
+- [ ] NVR-403 — Media and creative studio: Attachments and media
+- [ ] NVR-404 — Media and creative studio: Sharing and collaboration
+- [ ] NVR-405 — Media and creative studio: Import and export
+- [ ] NVR-406 — Media and creative studio: Activity history
+- [ ] NVR-407 — Media and creative studio: Version history
+- [ ] NVR-408 — Media and creative studio: Role-based permissions
+- [ ] NVR-409 — Media and creative studio: Bulk actions
+- [ ] NVR-410 — Media and creative studio: Validation and quality rules
+- [ ] NVR-411 — Media and creative studio: Offline access
+- [ ] NVR-412 — Media and creative studio: Cross-device synchronization
+- [ ] NVR-413 — Media and creative studio: Automation rules
+- [ ] NVR-414 — Media and creative studio: Analytics and insights
+- [ ] NVR-415 — Media and creative studio: Custom dashboard widgets
+- [ ] NVR-416 — Media and creative studio: Notifications and alerts
+- [ ] NVR-417 — Media and creative studio: Accessibility controls
+- [ ] NVR-418 — Media and creative studio: Localization and regional formats
+- [ ] NVR-419 — Media and creative studio: API and integrations
+- [ ] NVR-420 — Media and creative studio: Backup and recovery
+
+## Events and bookings
+
+- [ ] NVR-421 — Events and bookings: Create and capture
+- [ ] NVR-422 — Events and bookings: Edit and revise
+- [ ] NVR-423 — Events and bookings: Archive and restore
+- [ ] NVR-424 — Events and bookings: Duplicate and reuse
+- [ ] NVR-425 — Events and bookings: Templates and presets
+- [ ] NVR-426 — Events and bookings: Advanced search
+- [ ] NVR-427 — Events and bookings: Filters and saved views
+- [ ] NVR-428 — Events and bookings: Sorting and grouping
+- [ ] NVR-429 — Events and bookings: Tags and labels
+- [ ] NVR-430 — Events and bookings: Favorites and pinning
+- [ ] NVR-431 — Events and bookings: Reminders and due dates
+- [ ] NVR-432 — Events and bookings: Comments and discussions
+- [ ] NVR-433 — Events and bookings: Attachments and media
+- [ ] NVR-434 — Events and bookings: Sharing and collaboration
+- [ ] NVR-435 — Events and bookings: Import and export
+- [ ] NVR-436 — Events and bookings: Activity history
+- [ ] NVR-437 — Events and bookings: Version history
+- [ ] NVR-438 — Events and bookings: Role-based permissions
+- [ ] NVR-439 — Events and bookings: Bulk actions
+- [ ] NVR-440 — Events and bookings: Validation and quality rules
+- [ ] NVR-441 — Events and bookings: Offline access
+- [ ] NVR-442 — Events and bookings: Cross-device synchronization
+- [ ] NVR-443 — Events and bookings: Automation rules
+- [ ] NVR-444 — Events and bookings: Analytics and insights
+- [ ] NVR-445 — Events and bookings: Custom dashboard widgets
+- [ ] NVR-446 — Events and bookings: Notifications and alerts
+- [ ] NVR-447 — Events and bookings: Accessibility controls
+- [ ] NVR-448 — Events and bookings: Localization and regional formats
+- [ ] NVR-449 — Events and bookings: API and integrations
+- [ ] NVR-450 — Events and bookings: Backup and recovery
+
+## Finance and budgeting
+
+- [ ] NVR-451 — Finance and budgeting: Create and capture
+- [ ] NVR-452 — Finance and budgeting: Edit and revise
+- [ ] NVR-453 — Finance and budgeting: Archive and restore
+- [ ] NVR-454 — Finance and budgeting: Duplicate and reuse
+- [ ] NVR-455 — Finance and budgeting: Templates and presets
+- [ ] NVR-456 — Finance and budgeting: Advanced search
+- [ ] NVR-457 — Finance and budgeting: Filters and saved views
+- [ ] NVR-458 — Finance and budgeting: Sorting and grouping
+- [ ] NVR-459 — Finance and budgeting: Tags and labels
+- [ ] NVR-460 — Finance and budgeting: Favorites and pinning
+- [ ] NVR-461 — Finance and budgeting: Reminders and due dates
+- [ ] NVR-462 — Finance and budgeting: Comments and discussions
+- [ ] NVR-463 — Finance and budgeting: Attachments and media
+- [ ] NVR-464 — Finance and budgeting: Sharing and collaboration
+- [ ] NVR-465 — Finance and budgeting: Import and export
+- [ ] NVR-466 — Finance and budgeting: Activity history
+- [ ] NVR-467 — Finance and budgeting: Version history
+- [ ] NVR-468 — Finance and budgeting: Role-based permissions
+- [ ] NVR-469 — Finance and budgeting: Bulk actions
+- [ ] NVR-470 — Finance and budgeting: Validation and quality rules
+- [ ] NVR-471 — Finance and budgeting: Offline access
+- [ ] NVR-472 — Finance and budgeting: Cross-device synchronization
+- [ ] NVR-473 — Finance and budgeting: Automation rules
+- [ ] NVR-474 — Finance and budgeting: Analytics and insights
+- [ ] NVR-475 — Finance and budgeting: Custom dashboard widgets
+- [ ] NVR-476 — Finance and budgeting: Notifications and alerts
+- [ ] NVR-477 — Finance and budgeting: Accessibility controls
+- [ ] NVR-478 — Finance and budgeting: Localization and regional formats
+- [ ] NVR-479 — Finance and budgeting: API and integrations
+- [ ] NVR-480 — Finance and budgeting: Backup and recovery
+
+## Commerce and marketplace
+
+- [ ] NVR-481 — Commerce and marketplace: Create and capture
+- [ ] NVR-482 — Commerce and marketplace: Edit and revise
+- [ ] NVR-483 — Commerce and marketplace: Archive and restore
+- [ ] NVR-484 — Commerce and marketplace: Duplicate and reuse
+- [ ] NVR-485 — Commerce and marketplace: Templates and presets
+- [ ] NVR-486 — Commerce and marketplace: Advanced search
+- [ ] NVR-487 — Commerce and marketplace: Filters and saved views
+- [ ] NVR-488 — Commerce and marketplace: Sorting and grouping
+- [ ] NVR-489 — Commerce and marketplace: Tags and labels
+- [ ] NVR-490 — Commerce and marketplace: Favorites and pinning
+- [ ] NVR-491 — Commerce and marketplace: Reminders and due dates
+- [ ] NVR-492 — Commerce and marketplace: Comments and discussions
+- [ ] NVR-493 — Commerce and marketplace: Attachments and media
+- [ ] NVR-494 — Commerce and marketplace: Sharing and collaboration
+- [ ] NVR-495 — Commerce and marketplace: Import and export
+- [ ] NVR-496 — Commerce and marketplace: Activity history
+- [ ] NVR-497 — Commerce and marketplace: Version history
+- [ ] NVR-498 — Commerce and marketplace: Role-based permissions
+- [ ] NVR-499 — Commerce and marketplace: Bulk actions
+- [ ] NVR-500 — Commerce and marketplace: Validation and quality rules
+- [ ] NVR-501 — Commerce and marketplace: Offline access
+- [ ] NVR-502 — Commerce and marketplace: Cross-device synchronization
+- [ ] NVR-503 — Commerce and marketplace: Automation rules
+- [ ] NVR-504 — Commerce and marketplace: Analytics and insights
+- [ ] NVR-505 — Commerce and marketplace: Custom dashboard widgets
+- [ ] NVR-506 — Commerce and marketplace: Notifications and alerts
+- [ ] NVR-507 — Commerce and marketplace: Accessibility controls
+- [ ] NVR-508 — Commerce and marketplace: Localization and regional formats
+- [ ] NVR-509 — Commerce and marketplace: API and integrations
+- [ ] NVR-510 — Commerce and marketplace: Backup and recovery
+
+## Travel and itinerary planning
+
+- [ ] NVR-511 — Travel and itinerary planning: Create and capture
+- [ ] NVR-512 — Travel and itinerary planning: Edit and revise
+- [ ] NVR-513 — Travel and itinerary planning: Archive and restore
+- [ ] NVR-514 — Travel and itinerary planning: Duplicate and reuse
+- [ ] NVR-515 — Travel and itinerary planning: Templates and presets
+- [ ] NVR-516 — Travel and itinerary planning: Advanced search
+- [ ] NVR-517 — Travel and itinerary planning: Filters and saved views
+- [ ] NVR-518 — Travel and itinerary planning: Sorting and grouping
+- [ ] NVR-519 — Travel and itinerary planning: Tags and labels
+- [ ] NVR-520 — Travel and itinerary planning: Favorites and pinning
+- [ ] NVR-521 — Travel and itinerary planning: Reminders and due dates
+- [ ] NVR-522 — Travel and itinerary planning: Comments and discussions
+- [ ] NVR-523 — Travel and itinerary planning: Attachments and media
+- [ ] NVR-524 — Travel and itinerary planning: Sharing and collaboration
+- [ ] NVR-525 — Travel and itinerary planning: Import and export
+- [ ] NVR-526 — Travel and itinerary planning: Activity history
+- [ ] NVR-527 — Travel and itinerary planning: Version history
+- [ ] NVR-528 — Travel and itinerary planning: Role-based permissions
+- [ ] NVR-529 — Travel and itinerary planning: Bulk actions
+- [ ] NVR-530 — Travel and itinerary planning: Validation and quality rules
+- [ ] NVR-531 — Travel and itinerary planning: Offline access
+- [ ] NVR-532 — Travel and itinerary planning: Cross-device synchronization
+- [ ] NVR-533 — Travel and itinerary planning: Automation rules
+- [ ] NVR-534 — Travel and itinerary planning: Analytics and insights
+- [ ] NVR-535 — Travel and itinerary planning: Custom dashboard widgets
+- [ ] NVR-536 — Travel and itinerary planning: Notifications and alerts
+- [ ] NVR-537 — Travel and itinerary planning: Accessibility controls
+- [ ] NVR-538 — Travel and itinerary planning: Localization and regional formats
+- [ ] NVR-539 — Travel and itinerary planning: API and integrations
+- [ ] NVR-540 — Travel and itinerary planning: Backup and recovery
+
+## Wellness and routines
+
+- [ ] NVR-541 — Wellness and routines: Create and capture
+- [ ] NVR-542 — Wellness and routines: Edit and revise
+- [ ] NVR-543 — Wellness and routines: Archive and restore
+- [ ] NVR-544 — Wellness and routines: Duplicate and reuse
+- [ ] NVR-545 — Wellness and routines: Templates and presets
+- [ ] NVR-546 — Wellness and routines: Advanced search
+- [ ] NVR-547 — Wellness and routines: Filters and saved views
+- [ ] NVR-548 — Wellness and routines: Sorting and grouping
+- [ ] NVR-549 — Wellness and routines: Tags and labels
+- [ ] NVR-550 — Wellness and routines: Favorites and pinning
+- [ ] NVR-551 — Wellness and routines: Reminders and due dates
+- [ ] NVR-552 — Wellness and routines: Comments and discussions
+- [ ] NVR-553 — Wellness and routines: Attachments and media
+- [ ] NVR-554 — Wellness and routines: Sharing and collaboration
+- [ ] NVR-555 — Wellness and routines: Import and export
+- [ ] NVR-556 — Wellness and routines: Activity history
+- [ ] NVR-557 — Wellness and routines: Version history
+- [ ] NVR-558 — Wellness and routines: Role-based permissions
+- [ ] NVR-559 — Wellness and routines: Bulk actions
+- [ ] NVR-560 — Wellness and routines: Validation and quality rules
+- [ ] NVR-561 — Wellness and routines: Offline access
+- [ ] NVR-562 — Wellness and routines: Cross-device synchronization
+- [ ] NVR-563 — Wellness and routines: Automation rules
+- [ ] NVR-564 — Wellness and routines: Analytics and insights
+- [ ] NVR-565 — Wellness and routines: Custom dashboard widgets
+- [ ] NVR-566 — Wellness and routines: Notifications and alerts
+- [ ] NVR-567 — Wellness and routines: Accessibility controls
+- [ ] NVR-568 — Wellness and routines: Localization and regional formats
+- [ ] NVR-569 — Wellness and routines: API and integrations
+- [ ] NVR-570 — Wellness and routines: Backup and recovery
+
+## Developer workspace
+
+- [ ] NVR-571 — Developer workspace: Create and capture
+- [ ] NVR-572 — Developer workspace: Edit and revise
+- [ ] NVR-573 — Developer workspace: Archive and restore
+- [ ] NVR-574 — Developer workspace: Duplicate and reuse
+- [ ] NVR-575 — Developer workspace: Templates and presets
+- [ ] NVR-576 — Developer workspace: Advanced search
+- [ ] NVR-577 — Developer workspace: Filters and saved views
+- [ ] NVR-578 — Developer workspace: Sorting and grouping
+- [ ] NVR-579 — Developer workspace: Tags and labels
+- [ ] NVR-580 — Developer workspace: Favorites and pinning
+- [ ] NVR-581 — Developer workspace: Reminders and due dates
+- [ ] NVR-582 — Developer workspace: Comments and discussions
+- [ ] NVR-583 — Developer workspace: Attachments and media
+- [ ] NVR-584 — Developer workspace: Sharing and collaboration
+- [ ] NVR-585 — Developer workspace: Import and export
+- [ ] NVR-586 — Developer workspace: Activity history
+- [ ] NVR-587 — Developer workspace: Version history
+- [ ] NVR-588 — Developer workspace: Role-based permissions
+- [ ] NVR-589 — Developer workspace: Bulk actions
+- [ ] NVR-590 — Developer workspace: Validation and quality rules
+- [ ] NVR-591 — Developer workspace: Offline access
+- [ ] NVR-592 — Developer workspace: Cross-device synchronization
+- [ ] NVR-593 — Developer workspace: Automation rules
+- [ ] NVR-594 — Developer workspace: Analytics and insights
+- [ ] NVR-595 — Developer workspace: Custom dashboard widgets
+- [ ] NVR-596 — Developer workspace: Notifications and alerts
+- [ ] NVR-597 — Developer workspace: Accessibility controls
+- [ ] NVR-598 — Developer workspace: Localization and regional formats
+- [ ] NVR-599 — Developer workspace: API and integrations
+- [ ] NVR-600 — Developer workspace: Backup and recovery
+
+## Automation and workflows
+
+- [ ] NVR-601 — Automation and workflows: Create and capture
+- [ ] NVR-602 — Automation and workflows: Edit and revise
+- [ ] NVR-603 — Automation and workflows: Archive and restore
+- [ ] NVR-604 — Automation and workflows: Duplicate and reuse
+- [ ] NVR-605 — Automation and workflows: Templates and presets
+- [ ] NVR-606 — Automation and workflows: Advanced search
+- [ ] NVR-607 — Automation and workflows: Filters and saved views
+- [ ] NVR-608 — Automation and workflows: Sorting and grouping
+- [ ] NVR-609 — Automation and workflows: Tags and labels
+- [ ] NVR-610 — Automation and workflows: Favorites and pinning
+- [ ] NVR-611 — Automation and workflows: Reminders and due dates
+- [ ] NVR-612 — Automation and workflows: Comments and discussions
+- [ ] NVR-613 — Automation and workflows: Attachments and media
+- [ ] NVR-614 — Automation and workflows: Sharing and collaboration
+- [ ] NVR-615 — Automation and workflows: Import and export
+- [ ] NVR-616 — Automation and workflows: Activity history
+- [ ] NVR-617 — Automation and workflows: Version history
+- [ ] NVR-618 — Automation and workflows: Role-based permissions
+- [ ] NVR-619 — Automation and workflows: Bulk actions
+- [ ] NVR-620 — Automation and workflows: Validation and quality rules
+- [ ] NVR-621 — Automation and workflows: Offline access
+- [ ] NVR-622 — Automation and workflows: Cross-device synchronization
+- [ ] NVR-623 — Automation and workflows: Automation rules
+- [ ] NVR-624 — Automation and workflows: Analytics and insights
+- [ ] NVR-625 — Automation and workflows: Custom dashboard widgets
+- [ ] NVR-626 — Automation and workflows: Notifications and alerts
+- [ ] NVR-627 — Automation and workflows: Accessibility controls
+- [ ] NVR-628 — Automation and workflows: Localization and regional formats
+- [ ] NVR-629 — Automation and workflows: API and integrations
+- [ ] NVR-630 — Automation and workflows: Backup and recovery
+
+## Integrations and connected apps
+
+- [ ] NVR-631 — Integrations and connected apps: Create and capture
+- [ ] NVR-632 — Integrations and connected apps: Edit and revise
+- [ ] NVR-633 — Integrations and connected apps: Archive and restore
+- [ ] NVR-634 — Integrations and connected apps: Duplicate and reuse
+- [ ] NVR-635 — Integrations and connected apps: Templates and presets
+- [ ] NVR-636 — Integrations and connected apps: Advanced search
+- [ ] NVR-637 — Integrations and connected apps: Filters and saved views
+- [ ] NVR-638 — Integrations and connected apps: Sorting and grouping
+- [ ] NVR-639 — Integrations and connected apps: Tags and labels
+- [ ] NVR-640 — Integrations and connected apps: Favorites and pinning
+- [ ] NVR-641 — Integrations and connected apps: Reminders and due dates
+- [ ] NVR-642 — Integrations and connected apps: Comments and discussions
+- [ ] NVR-643 — Integrations and connected apps: Attachments and media
+- [ ] NVR-644 — Integrations and connected apps: Sharing and collaboration
+- [ ] NVR-645 — Integrations and connected apps: Import and export
+- [ ] NVR-646 — Integrations and connected apps: Activity history
+- [ ] NVR-647 — Integrations and connected apps: Version history
+- [ ] NVR-648 — Integrations and connected apps: Role-based permissions
+- [ ] NVR-649 — Integrations and connected apps: Bulk actions
+- [ ] NVR-650 — Integrations and connected apps: Validation and quality rules
+- [ ] NVR-651 — Integrations and connected apps: Offline access
+- [ ] NVR-652 — Integrations and connected apps: Cross-device synchronization
+- [ ] NVR-653 — Integrations and connected apps: Automation rules
+- [ ] NVR-654 — Integrations and connected apps: Analytics and insights
+- [ ] NVR-655 — Integrations and connected apps: Custom dashboard widgets
+- [ ] NVR-656 — Integrations and connected apps: Notifications and alerts
+- [ ] NVR-657 — Integrations and connected apps: Accessibility controls
+- [ ] NVR-658 — Integrations and connected apps: Localization and regional formats
+- [ ] NVR-659 — Integrations and connected apps: API and integrations
+- [ ] NVR-660 — Integrations and connected apps: Backup and recovery
+
+## Security and privacy
+
+- [ ] NVR-661 — Security and privacy: Create and capture
+- [ ] NVR-662 — Security and privacy: Edit and revise
+- [ ] NVR-663 — Security and privacy: Archive and restore
+- [ ] NVR-664 — Security and privacy: Duplicate and reuse
+- [ ] NVR-665 — Security and privacy: Templates and presets
+- [ ] NVR-666 — Security and privacy: Advanced search
+- [ ] NVR-667 — Security and privacy: Filters and saved views
+- [ ] NVR-668 — Security and privacy: Sorting and grouping
+- [ ] NVR-669 — Security and privacy: Tags and labels
+- [ ] NVR-670 — Security and privacy: Favorites and pinning
+- [ ] NVR-671 — Security and privacy: Reminders and due dates
+- [ ] NVR-672 — Security and privacy: Comments and discussions
+- [ ] NVR-673 — Security and privacy: Attachments and media
+- [ ] NVR-674 — Security and privacy: Sharing and collaboration
+- [ ] NVR-675 — Security and privacy: Import and export
+- [ ] NVR-676 — Security and privacy: Activity history
+- [ ] NVR-677 — Security and privacy: Version history
+- [ ] NVR-678 — Security and privacy: Role-based permissions
+- [ ] NVR-679 — Security and privacy: Bulk actions
+- [ ] NVR-680 — Security and privacy: Validation and quality rules
+- [ ] NVR-681 — Security and privacy: Offline access
+- [ ] NVR-682 — Security and privacy: Cross-device synchronization
+- [ ] NVR-683 — Security and privacy: Automation rules
+- [ ] NVR-684 — Security and privacy: Analytics and insights
+- [ ] NVR-685 — Security and privacy: Custom dashboard widgets
+- [ ] NVR-686 — Security and privacy: Notifications and alerts
+- [ ] NVR-687 — Security and privacy: Accessibility controls
+- [ ] NVR-688 — Security and privacy: Localization and regional formats
+- [ ] NVR-689 — Security and privacy: API and integrations
+- [ ] NVR-690 — Security and privacy: Backup and recovery
+
+## Account and identity
+
+- [ ] NVR-691 — Account and identity: Create and capture
+- [ ] NVR-692 — Account and identity: Edit and revise
+- [ ] NVR-693 — Account and identity: Archive and restore
+- [ ] NVR-694 — Account and identity: Duplicate and reuse
+- [ ] NVR-695 — Account and identity: Templates and presets
+- [ ] NVR-696 — Account and identity: Advanced search
+- [ ] NVR-697 — Account and identity: Filters and saved views
+- [ ] NVR-698 — Account and identity: Sorting and grouping
+- [ ] NVR-699 — Account and identity: Tags and labels
+- [ ] NVR-700 — Account and identity: Favorites and pinning
+- [ ] NVR-701 — Account and identity: Reminders and due dates
+- [ ] NVR-702 — Account and identity: Comments and discussions
+- [ ] NVR-703 — Account and identity: Attachments and media
+- [ ] NVR-704 — Account and identity: Sharing and collaboration
+- [ ] NVR-705 — Account and identity: Import and export
+- [ ] NVR-706 — Account and identity: Activity history
+- [ ] NVR-707 — Account and identity: Version history
+- [ ] NVR-708 — Account and identity: Role-based permissions
+- [ ] NVR-709 — Account and identity: Bulk actions
+- [ ] NVR-710 — Account and identity: Validation and quality rules
+- [ ] NVR-711 — Account and identity: Offline access
+- [ ] NVR-712 — Account and identity: Cross-device synchronization
+- [ ] NVR-713 — Account and identity: Automation rules
+- [ ] NVR-714 — Account and identity: Analytics and insights
+- [ ] NVR-715 — Account and identity: Custom dashboard widgets
+- [ ] NVR-716 — Account and identity: Notifications and alerts
+- [ ] NVR-717 — Account and identity: Accessibility controls
+- [ ] NVR-718 — Account and identity: Localization and regional formats
+- [ ] NVR-719 — Account and identity: API and integrations
+- [ ] NVR-720 — Account and identity: Backup and recovery
+
+## Notifications and inbox
+
+- [ ] NVR-721 — Notifications and inbox: Create and capture
+- [ ] NVR-722 — Notifications and inbox: Edit and revise
+- [ ] NVR-723 — Notifications and inbox: Archive and restore
+- [ ] NVR-724 — Notifications and inbox: Duplicate and reuse
+- [ ] NVR-725 — Notifications and inbox: Templates and presets
+- [ ] NVR-726 — Notifications and inbox: Advanced search
+- [ ] NVR-727 — Notifications and inbox: Filters and saved views
+- [ ] NVR-728 — Notifications and inbox: Sorting and grouping
+- [ ] NVR-729 — Notifications and inbox: Tags and labels
+- [ ] NVR-730 — Notifications and inbox: Favorites and pinning
+- [ ] NVR-731 — Notifications and inbox: Reminders and due dates
+- [ ] NVR-732 — Notifications and inbox: Comments and discussions
+- [ ] NVR-733 — Notifications and inbox: Attachments and media
+- [ ] NVR-734 — Notifications and inbox: Sharing and collaboration
+- [ ] NVR-735 — Notifications and inbox: Import and export
+- [ ] NVR-736 — Notifications and inbox: Activity history
+- [ ] NVR-737 — Notifications and inbox: Version history
+- [ ] NVR-738 — Notifications and inbox: Role-based permissions
+- [ ] NVR-739 — Notifications and inbox: Bulk actions
+- [ ] NVR-740 — Notifications and inbox: Validation and quality rules
+- [ ] NVR-741 — Notifications and inbox: Offline access
+- [ ] NVR-742 — Notifications and inbox: Cross-device synchronization
+- [ ] NVR-743 — Notifications and inbox: Automation rules
+- [ ] NVR-744 — Notifications and inbox: Analytics and insights
+- [ ] NVR-745 — Notifications and inbox: Custom dashboard widgets
+- [ ] NVR-746 — Notifications and inbox: Notifications and alerts
+- [ ] NVR-747 — Notifications and inbox: Accessibility controls
+- [ ] NVR-748 — Notifications and inbox: Localization and regional formats
+- [ ] NVR-749 — Notifications and inbox: API and integrations
+- [ ] NVR-750 — Notifications and inbox: Backup and recovery
+
+## Search and discovery
+
+- [ ] NVR-751 — Search and discovery: Create and capture
+- [ ] NVR-752 — Search and discovery: Edit and revise
+- [ ] NVR-753 — Search and discovery: Archive and restore
+- [ ] NVR-754 — Search and discovery: Duplicate and reuse
+- [ ] NVR-755 — Search and discovery: Templates and presets
+- [ ] NVR-756 — Search and discovery: Advanced search
+- [ ] NVR-757 — Search and discovery: Filters and saved views
+- [ ] NVR-758 — Search and discovery: Sorting and grouping
+- [ ] NVR-759 — Search and discovery: Tags and labels
+- [ ] NVR-760 — Search and discovery: Favorites and pinning
+- [ ] NVR-761 — Search and discovery: Reminders and due dates
+- [ ] NVR-762 — Search and discovery: Comments and discussions
+- [ ] NVR-763 — Search and discovery: Attachments and media
+- [ ] NVR-764 — Search and discovery: Sharing and collaboration
+- [ ] NVR-765 — Search and discovery: Import and export
+- [ ] NVR-766 — Search and discovery: Activity history
+- [ ] NVR-767 — Search and discovery: Version history
+- [ ] NVR-768 — Search and discovery: Role-based permissions
+- [ ] NVR-769 — Search and discovery: Bulk actions
+- [ ] NVR-770 — Search and discovery: Validation and quality rules
+- [ ] NVR-771 — Search and discovery: Offline access
+- [ ] NVR-772 — Search and discovery: Cross-device synchronization
+- [ ] NVR-773 — Search and discovery: Automation rules
+- [ ] NVR-774 — Search and discovery: Analytics and insights
+- [ ] NVR-775 — Search and discovery: Custom dashboard widgets
+- [ ] NVR-776 — Search and discovery: Notifications and alerts
+- [ ] NVR-777 — Search and discovery: Accessibility controls
+- [ ] NVR-778 — Search and discovery: Localization and regional formats
+- [ ] NVR-779 — Search and discovery: API and integrations
+- [ ] NVR-780 — Search and discovery: Backup and recovery
+
+## Support and help center
+
+- [ ] NVR-781 — Support and help center: Create and capture
+- [ ] NVR-782 — Support and help center: Edit and revise
+- [ ] NVR-783 — Support and help center: Archive and restore
+- [ ] NVR-784 — Support and help center: Duplicate and reuse
+- [ ] NVR-785 — Support and help center: Templates and presets
+- [ ] NVR-786 — Support and help center: Advanced search
+- [ ] NVR-787 — Support and help center: Filters and saved views
+- [ ] NVR-788 — Support and help center: Sorting and grouping
+- [ ] NVR-789 — Support and help center: Tags and labels
+- [ ] NVR-790 — Support and help center: Favorites and pinning
+- [ ] NVR-791 — Support and help center: Reminders and due dates
+- [ ] NVR-792 — Support and help center: Comments and discussions
+- [ ] NVR-793 — Support and help center: Attachments and media
+- [ ] NVR-794 — Support and help center: Sharing and collaboration
+- [ ] NVR-795 — Support and help center: Import and export
+- [ ] NVR-796 — Support and help center: Activity history
+- [ ] NVR-797 — Support and help center: Version history
+- [ ] NVR-798 — Support and help center: Role-based permissions
+- [ ] NVR-799 — Support and help center: Bulk actions
+- [ ] NVR-800 — Support and help center: Validation and quality rules
+- [ ] NVR-801 — Support and help center: Offline access
+- [ ] NVR-802 — Support and help center: Cross-device synchronization
+- [ ] NVR-803 — Support and help center: Automation rules
+- [ ] NVR-804 — Support and help center: Analytics and insights
+- [ ] NVR-805 — Support and help center: Custom dashboard widgets
+- [ ] NVR-806 — Support and help center: Notifications and alerts
+- [ ] NVR-807 — Support and help center: Accessibility controls
+- [ ] NVR-808 — Support and help center: Localization and regional formats
+- [ ] NVR-809 — Support and help center: API and integrations
+- [ ] NVR-810 — Support and help center: Backup and recovery
+
+## Administration and governance
+
+- [ ] NVR-811 — Administration and governance: Create and capture
+- [ ] NVR-812 — Administration and governance: Edit and revise
+- [ ] NVR-813 — Administration and governance: Archive and restore
+- [ ] NVR-814 — Administration and governance: Duplicate and reuse
+- [ ] NVR-815 — Administration and governance: Templates and presets
+- [ ] NVR-816 — Administration and governance: Advanced search
+- [ ] NVR-817 — Administration and governance: Filters and saved views
+- [ ] NVR-818 — Administration and governance: Sorting and grouping
+- [ ] NVR-819 — Administration and governance: Tags and labels
+- [ ] NVR-820 — Administration and governance: Favorites and pinning
+- [ ] NVR-821 — Administration and governance: Reminders and due dates
+- [ ] NVR-822 — Administration and governance: Comments and discussions
+- [ ] NVR-823 — Administration and governance: Attachments and media
+- [ ] NVR-824 — Administration and governance: Sharing and collaboration
+- [ ] NVR-825 — Administration and governance: Import and export
+- [ ] NVR-826 — Administration and governance: Activity history
+- [ ] NVR-827 — Administration and governance: Version history
+- [ ] NVR-828 — Administration and governance: Role-based permissions
+- [ ] NVR-829 — Administration and governance: Bulk actions
+- [ ] NVR-830 — Administration and governance: Validation and quality rules
+- [ ] NVR-831 — Administration and governance: Offline access
+- [ ] NVR-832 — Administration and governance: Cross-device synchronization
+- [ ] NVR-833 — Administration and governance: Automation rules
+- [ ] NVR-834 — Administration and governance: Analytics and insights
+- [ ] NVR-835 — Administration and governance: Custom dashboard widgets
+- [ ] NVR-836 — Administration and governance: Notifications and alerts
+- [ ] NVR-837 — Administration and governance: Accessibility controls
+- [ ] NVR-838 — Administration and governance: Localization and regional formats
+- [ ] NVR-839 — Administration and governance: API and integrations
+- [ ] NVR-840 — Administration and governance: Backup and recovery
+
+## Forms and data collection
+
+- [ ] NVR-841 — Forms and data collection: Create and capture
+- [ ] NVR-842 — Forms and data collection: Edit and revise
+- [ ] NVR-843 — Forms and data collection: Archive and restore
+- [ ] NVR-844 — Forms and data collection: Duplicate and reuse
+- [ ] NVR-845 — Forms and data collection: Templates and presets
+- [ ] NVR-846 — Forms and data collection: Advanced search
+- [ ] NVR-847 — Forms and data collection: Filters and saved views
+- [ ] NVR-848 — Forms and data collection: Sorting and grouping
+- [ ] NVR-849 — Forms and data collection: Tags and labels
+- [ ] NVR-850 — Forms and data collection: Favorites and pinning
+- [ ] NVR-851 — Forms and data collection: Reminders and due dates
+- [ ] NVR-852 — Forms and data collection: Comments and discussions
+- [ ] NVR-853 — Forms and data collection: Attachments and media
+- [ ] NVR-854 — Forms and data collection: Sharing and collaboration
+- [ ] NVR-855 — Forms and data collection: Import and export
+- [ ] NVR-856 — Forms and data collection: Activity history
+- [ ] NVR-857 — Forms and data collection: Version history
+- [ ] NVR-858 — Forms and data collection: Role-based permissions
+- [ ] NVR-859 — Forms and data collection: Bulk actions
+- [ ] NVR-860 — Forms and data collection: Validation and quality rules
+- [ ] NVR-861 — Forms and data collection: Offline access
+- [ ] NVR-862 — Forms and data collection: Cross-device synchronization
+- [ ] NVR-863 — Forms and data collection: Automation rules
+- [ ] NVR-864 — Forms and data collection: Analytics and insights
+- [ ] NVR-865 — Forms and data collection: Custom dashboard widgets
+- [ ] NVR-866 — Forms and data collection: Notifications and alerts
+- [ ] NVR-867 — Forms and data collection: Accessibility controls
+- [ ] NVR-868 — Forms and data collection: Localization and regional formats
+- [ ] NVR-869 — Forms and data collection: API and integrations
+- [ ] NVR-870 — Forms and data collection: Backup and recovery
+
+## Personal dashboard
+
+- [ ] NVR-871 — Personal dashboard: Create and capture
+- [ ] NVR-872 — Personal dashboard: Edit and revise
+- [ ] NVR-873 — Personal dashboard: Archive and restore
+- [ ] NVR-874 — Personal dashboard: Duplicate and reuse
+- [ ] NVR-875 — Personal dashboard: Templates and presets
+- [ ] NVR-876 — Personal dashboard: Advanced search
+- [ ] NVR-877 — Personal dashboard: Filters and saved views
+- [ ] NVR-878 — Personal dashboard: Sorting and grouping
+- [ ] NVR-879 — Personal dashboard: Tags and labels
+- [ ] NVR-880 — Personal dashboard: Favorites and pinning
+- [ ] NVR-881 — Personal dashboard: Reminders and due dates
+- [ ] NVR-882 — Personal dashboard: Comments and discussions
+- [ ] NVR-883 — Personal dashboard: Attachments and media
+- [ ] NVR-884 — Personal dashboard: Sharing and collaboration
+- [ ] NVR-885 — Personal dashboard: Import and export
+- [ ] NVR-886 — Personal dashboard: Activity history
+- [ ] NVR-887 — Personal dashboard: Version history
+- [ ] NVR-888 — Personal dashboard: Role-based permissions
+- [ ] NVR-889 — Personal dashboard: Bulk actions
+- [ ] NVR-890 — Personal dashboard: Validation and quality rules
+- [ ] NVR-891 — Personal dashboard: Offline access
+- [ ] NVR-892 — Personal dashboard: Cross-device synchronization
+- [ ] NVR-893 — Personal dashboard: Automation rules
+- [ ] NVR-894 — Personal dashboard: Analytics and insights
+- [ ] NVR-895 — Personal dashboard: Custom dashboard widgets
+- [ ] NVR-896 — Personal dashboard: Notifications and alerts
+- [ ] NVR-897 — Personal dashboard: Accessibility controls
+- [ ] NVR-898 — Personal dashboard: Localization and regional formats
+- [ ] NVR-899 — Personal dashboard: API and integrations
+- [ ] NVR-900 — Personal dashboard: Backup and recovery
