@@ -1,0 +1,30 @@
+export const theme = {
+  colors: {
+    navy: "#101B35",
+    navySoft: "#192744",
+    navyLight: "#263653",
+    gold: "#D9C58D",
+    goldDeep: "#B99B58",
+    background: "#F5F6F8",
+    surface: "#FFFFFF",
+    text: "#172238",
+    muted: "#7C8798",
+    border: "#E7EAF0",
+    success: "#2F8F72",
+    lavender: "#ECEBFA",
+    blueTint: "#E9F0FA",
+  },
+  radius: {
+    sm: 12,
+    md: 18,
+    lg: 26,
+    xl: 32,
+  },
+  spacing: {
+    xs: 6,
+    sm: 10,
+    md: 16,
+    lg: 22,
+    xl: 30,
+  },
+} as const;
