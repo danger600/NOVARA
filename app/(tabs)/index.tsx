@@ -26,7 +26,7 @@ export default function HomeScreen() {
           <Link href="/notifications" asChild><Pressable accessibilityRole="button" accessibilityLabel="Notifications" style={styles.iconButton}>
             <Ionicons name="notifications-outline" size={21} color={theme.colors.text} />
             <View style={styles.notificationDot} />
-          </Pressable>
+          </Pressable></Link>
         </View>
 
         <View style={styles.hero}>
@@ -37,7 +37,7 @@ export default function HomeScreen() {
           <Link href="/discover" asChild><Pressable accessibilityRole="button" style={styles.heroButton}>
             <Text style={styles.heroButtonText}>Explore NOVARA</Text>
             <Ionicons name="arrow-forward" size={17} color={theme.colors.navy} />
-          </Pressable>
+          </Pressable></Link>
           <View style={styles.heroOrb}><Ionicons name="aperture" size={76} color="#D9C58D" /></View>
         </View>
 
