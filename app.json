@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "NOVARA",
+    "slug": "novara",
+    "scheme": "novara",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#101B35"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tigernsanz.novara"
+    },
+    "android": {
+      "package": "com.tigernsanz.novara",
+      "adaptiveIcon": {
+        "backgroundColor": "#101B35"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "NOVARA",
+      "shortName": "NOVARA",
+      "themeColor": "#101B35"
+    },
+    "plugins": ["expo-router"]
+  }
+}
