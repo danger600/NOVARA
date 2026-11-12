@@ -2,7 +2,7 @@
 
 **One platform. Infinite possibilities.**
 
-NOVARA is an expanding cross-platform digital platform built with Expo, React Native, TypeScript, Expo Router, and React Native Web.
+NOVARA is a cross-platform digital workspace built with Expo, React Native, TypeScript, Expo Router, and React Native Web.
 
 ## Platforms
 - Web
@@ -13,34 +13,48 @@ NOVARA is an expanding cross-platform digital platform built with Expo, React Na
 ```bash
 npm install
 npm run typecheck
+npm run build:web
 npm run web
 ```
-Or run `npx expo start`, then press `a`, `i`, or `w` for the platform you want. iOS simulator builds require macOS and Xcode.
+Or use `npx expo start` and press `a`, `i`, or `w`. The iOS simulator requires macOS and Xcode.
 
-## Current implemented frontend
-- Premium navy, white, and champagne-gold design system
-- Five primary navigation areas: Home, Discover, Tasks, Workspace, Profile
-- Workspace directory linking to 12 product modules
-- Reusable feature-screen system with search and responsive layouts
-- Local in-memory task, note, and goal creation and completion interactions
-- Informational screens for calendar, learning, business, AI, analytics, messaging, notifications, settings, and help
+## Current frontend capabilities
+- Responsive navy, white, and champagne-gold interface
+- Home, Discover, Tasks, Workspace, Profile, and Settings navigation
+- 12 workspace modules
+- Searchable feature lists
+- Add and complete tasks, notes, and goals
+- Local persistence for feature collections using AsyncStorage (browser storage on web and native storage on mobile)
+- Language selection for English, Kinyarwanda, and French
+- Device-language detection with English fallback
+- Language preference saved locally
+- Expo web export configuration for Vercel
 
-## Important implementation boundaries
-This repository is still a frontend preview. Task, note, and goal changes are held in screen memory and are not durable across reloads. There is no production authentication, backend, database, cloud sync, real-time messaging, payment system, or connected AI model. The AI and collaboration pages describe planned capabilities and do not claim to provide those services.
+## Data and security boundaries
+Local storage is device-specific and is not cloud synchronization or a backup. Clearing browser/app data can remove locally saved content. There is currently no production account system, remote database, multi-device sync, secure server authorization, real-time messaging, payment processing, or connected AI provider. The AI and collaboration modules remain previews.
 
-## Global-readiness roadmap
-1. Add localization and region-aware date, number, and currency formatting.
-2. Implement accessible navigation, keyboard support, and screen-reader labels.
-3. Add durable offline storage and conflict-aware synchronization.
-4. Implement secure authentication, authorization, account recovery, and session controls.
-5. Connect a production API and database with validation, rate limits, backups, and audit logs.
-6. Add automated unit, integration, end-to-end, and cross-device tests.
-7. Add privacy controls, data export/deletion, consent, and security reviews.
-8. Add monitoring, error reporting, performance budgets, and release automation.
-9. Complete Android, iOS, and web QA before public production launch.
+## Localization status
+English, Kinyarwanda, and French are available as initial language choices. Navigation labels and shared feature-screen controls are translated; some module-specific content still needs complete translation review. Date, number, and currency formatting by region is a future step.
 
-## Feature target
-The long-term product target is a catalog of 900 capabilities across 30 product areas. See [the 900-capability roadmap](docs/FEATURE_CATALOG_900.md). These are planned items, not implemented features. Features will be counted as implemented only after their user flow, data behavior, permissions, error states, and tests are complete.
+## Global launch checklist
+- Complete translation coverage and accessibility testing
+- Add secure authentication and account recovery
+- Add backend APIs, database persistence, and encrypted transport
+- Add cloud synchronization, conflict resolution, backups, and data export/deletion
+- Add privacy policy, consent, retention rules, and security review
+- Add unit, integration, end-to-end, and device testing
+- Add monitoring, crash reporting, and release automation
+- Validate Android and iOS production builds and store requirements
 
-## Repository
-https://github.com/danger600/NOVARA
+## Product roadmap
+The 900-capability catalog in [docs/FEATURE_CATALOG_900.md](docs/FEATURE_CATALOG_900.md) is a proposed roadmap, not a claim that 900 features are implemented.
+
+## Deployment
+Vercel project setup requires access to the user's Vercel team. Import the GitHub repository and use:
+- Framework preset: Other
+- Build command: `expo export -p web`
+- Output directory: `dist`
+- Install command: `npm install`
+- Root directory: repository root
+
+Repository: https://github.com/danger600/NOVARA
