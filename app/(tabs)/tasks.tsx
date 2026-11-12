@@ -1,0 +1,2 @@
+import { FeatureScreen } from "@/components/FeatureScreen";
+export default function TasksScreen() { return <FeatureScreen eyebrow="PRODUCTIVITY" title="Tasks & focus" description="Capture priorities, make progress, and keep your next action visible." icon="checkbox-outline" editable inputHint="What needs to get done?" items={[{title:"Plan your week",detail:"Break your goals into manageable steps"},{title:"Choose today's priority",detail:"Focus on the task with the highest impact"},{title:"Review completed work",detail:"Reflect on what moved forward"}]} />; }
