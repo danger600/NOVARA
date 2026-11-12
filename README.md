@@ -2,50 +2,45 @@
 
 **One platform. Infinite possibilities.**
 
-NOVARA is a premium cross-platform digital platform starter for Android, iOS, and Web. The first iteration establishes the visual system, navigation, and working product areas before connecting production services.
+NOVARA is an expanding cross-platform digital platform built with Expo, React Native, TypeScript, Expo Router, and React Native Web.
 
-## Technology
-
-- Expo + React Native
-- TypeScript
-- Expo Router
-- React Native Web
+## Platforms
+- Web
+- Android
+- iOS
 
 ## Run locally
-
 ```bash
 npm install
-npx expo start
+npm run typecheck
+npm run web
 ```
+Or run `npx expo start`, then press `a`, `i`, or `w` for the platform you want. iOS simulator builds require macOS and Xcode.
 
-- Press `a` to open Android (Android Studio/emulator required).
-- Press `i` to open iOS Simulator (macOS + Xcode required).
-- Press `w` to open the web app.
-
-For a physical phone, install Expo Go and scan the QR code shown by Expo.
-
-## Current starter features
-
+## Current implemented frontend
 - Premium navy, white, and champagne-gold design system
-- Responsive tab navigation
-- Home dashboard
-- Discover screen
-- Workspace screen
-- Profile screen
+- Five primary navigation areas: Home, Discover, Tasks, Workspace, Profile
+- Workspace directory linking to 12 product modules
+- Reusable feature-screen system with search and responsive layouts
+- Local in-memory task, note, and goal creation and completion interactions
+- Informational screens for calendar, learning, business, AI, analytics, messaging, notifications, settings, and help
 
-## Roadmap
+## Important implementation boundaries
+This repository is still a frontend preview. Task, note, and goal changes are held in screen memory and are not durable across reloads. There is no production authentication, backend, database, cloud sync, real-time messaging, payment system, or connected AI model. The AI and collaboration pages describe planned capabilities and do not claim to provide those services.
 
-1. Confirm product requirements and feature priorities.
-2. Implement account registration, sign-in, and secure sessions.
-3. Select and connect backend and database services.
-4. Build the first production-ready core workflow.
-5. Add accessibility, automated tests, and platform QA.
-6. Prepare Android and iOS release builds and deploy the web app.
+## Global-readiness roadmap
+1. Add localization and region-aware date, number, and currency formatting.
+2. Implement accessible navigation, keyboard support, and screen-reader labels.
+3. Add durable offline storage and conflict-aware synchronization.
+4. Implement secure authentication, authorization, account recovery, and session controls.
+5. Connect a production API and database with validation, rate limits, backups, and audit logs.
+6. Add automated unit, integration, end-to-end, and cross-device tests.
+7. Add privacy controls, data export/deletion, consent, and security reviews.
+8. Add monitoring, error reporting, performance budgets, and release automation.
+9. Complete Android, iOS, and web QA before public production launch.
 
-## Important
+## Feature target
+The long-term product target is a catalog of 900+ capabilities across modular product areas. A roadmap item is not an implemented feature. Features will be counted as implemented only after their user flow, data behavior, permissions, error states, and tests are complete.
 
-This is an initial frontend foundation. Authentication, cloud synchronization, AI services, and production data storage are not yet connected. Do not use it to store sensitive production information until those services and security controls are implemented.
-
-## Project
-
-Repository: https://github.com/danger600/NOVARA
+## Repository
+https://github.com/danger600/NOVARA
