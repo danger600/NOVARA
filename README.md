@@ -40,7 +40,7 @@ This repository is still a frontend preview. Task, note, and goal changes are he
 9. Complete Android, iOS, and web QA before public production launch.
 
 ## Feature target
-The long-term product target is a catalog of 900+ capabilities across modular product areas. A roadmap item is not an implemented feature. Features will be counted as implemented only after their user flow, data behavior, permissions, error states, and tests are complete.
+The long-term product target is a catalog of 900 capabilities across 30 product areas. See [the 900-capability roadmap](docs/FEATURE_CATALOG_900.md). These are planned items, not implemented features. Features will be counted as implemented only after their user flow, data behavior, permissions, error states, and tests are complete.
 
 ## Repository
 https://github.com/danger600/NOVARA
