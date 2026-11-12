@@ -1,13 +1,14 @@
+import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, Text, View, Pressable, useWindowDimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
 
 const quickActions = [
-  { icon: "sparkles-outline" as const, title: "AI Assistant", detail: "Think, create and explore", tint: "#F1EBDD" },
-  { icon: "book-outline" as const, title: "Learning", detail: "Grow your knowledge", tint: "#E9F0FA" },
-  { icon: "layers-outline" as const, title: "Projects", detail: "Bring ideas to life", tint: "#ECEBFA" },
-  { icon: "analytics-outline" as const, title: "Insights", detail: "See your progress", tint: "#E7F2EE" },
+  { icon: "sparkles-outline" as const, title: "AI Assistant", detail: "Think, create and explore", tint: "#F1EBDD", href: "/ai" as const },
+  { icon: "book-outline" as const, title: "Learning", detail: "Grow your knowledge", tint: "#E9F0FA", href: "/learning" as const },
+  { icon: "layers-outline" as const, title: "Projects", detail: "Bring ideas to life", tint: "#ECEBFA", href: "/business" as const },
+  { icon: "analytics-outline" as const, title: "Insights", detail: "See your progress", tint: "#E7F2EE", href: "/analytics" as const },
 ];
 
 export default function HomeScreen() {
@@ -22,7 +23,7 @@ export default function HomeScreen() {
             <View style={styles.brandMark}><Ionicons name="aperture" size={22} color={theme.colors.gold} /></View>
             <Text style={styles.brand}>NOVARA</Text>
           </View>
-          <Pressable accessibilityRole="button" accessibilityLabel="Notifications" style={styles.iconButton}>
+          <Link href="/notifications" asChild><Pressable accessibilityRole="button" accessibilityLabel="Notifications" style={styles.iconButton}>
             <Ionicons name="notifications-outline" size={21} color={theme.colors.text} />
             <View style={styles.notificationDot} />
           </Pressable>
@@ -33,7 +34,7 @@ export default function HomeScreen() {
           <Text style={styles.eyebrow}>YOUR PERSONAL SPACE</Text>
           <Text style={styles.heroTitle}>Make room for{ "\n" }what's next.</Text>
           <Text style={styles.heroCopy}>A clearer way to learn, create, and move your ideas forward.</Text>
-          <Pressable accessibilityRole="button" style={styles.heroButton}>
+          <Link href="/discover" asChild><Pressable accessibilityRole="button" style={styles.heroButton}>
             <Text style={styles.heroButtonText}>Explore NOVARA</Text>
             <Ionicons name="arrow-forward" size={17} color={theme.colors.navy} />
           </Pressable>
@@ -54,7 +55,7 @@ export default function HomeScreen() {
         <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>A world of possibilities</Text><Text style={styles.sectionSub}>Choose where you want to begin</Text></View></View>
         <View style={[styles.actionGrid, wide && styles.actionGridWide]}>
           {quickActions.map((item) => (
-            <Pressable key={item.title} accessibilityRole="button" style={styles.actionCard}>
+            <Link key={item.title} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.actionCard}>
               <View style={[styles.actionIcon, { backgroundColor: item.tint }]}><Ionicons name={item.icon} size={22} color={theme.colors.navy} /></View>
               <View style={{ flex: 1 }}><Text style={styles.actionTitle}>{item.title}</Text><Text style={styles.actionDetail}>{item.detail}</Text></View>
               <Ionicons name="arrow-up-right" size={18} color={theme.colors.muted} />
