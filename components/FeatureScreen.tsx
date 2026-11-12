@@ -1,4 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { readCollection, writeCollection, type StoredRecord } from "@/lib/storage";
+import { useI18n } from "@/lib/i18n";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -17,7 +19,16 @@ type Props = {
 };
 
 export function FeatureScreen({ eyebrow, title, description, icon, items, editable = false, inputHint = "Add a new item…", previewNote }: Props) {
-  const [records, setRecords] = useState(() => items.map((item, index) => ({ ...item, id: String(index), done: false })));
+  const [records, setRecords] = useState<StoredRecord[]>(() => items.map((item, index) => ({ ...item, id: String(index), done: false })));
+  const [loaded, setLoaded] = useState(false);
+  const { t } = useI18n();
+  const storageKey = `collection-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+  useEffect(() => {
+    let active = true;
+    readCollection(storageKey).then((saved) => { if (active && saved) setRecords(saved); }).finally(() => { if (active) setLoaded(true); });
+    return () => { active = false; };
+  }, [storageKey]);
+  useEffect(() => { if (loaded) writeCollection(storageKey, records).catch(() => undefined); }, [loaded, records, storageKey]);
   const [query, setQuery] = useState("");
   const [draft, setDraft] = useState("");
   const visible = useMemo(() => records.filter((item) => (item.title + " " + item.detail).toLowerCase().includes(query.toLowerCase())), [records, query]);
@@ -26,7 +37,7 @@ export function FeatureScreen({ eyebrow, title, description, icon, items, editab
   const addItem = () => {
     const value = draft.trim();
     if (!value) return;
-    setRecords((current) => [{ id: String(Date.now()), title: value, detail: "Added in this device preview", done: false }, ...current]);
+    setRecords((current) => [{ id: String(Date.now()), title: value, detail: "Saved on this device", done: false }, ...current]);
     setDraft("");
   };
 
@@ -37,19 +48,19 @@ export function FeatureScreen({ eyebrow, title, description, icon, items, editab
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
           <View style={styles.brand}><View style={styles.brandIcon}><Ionicons name="aperture" size={18} color={theme.colors.gold} /></View><Text style={styles.brandText}>NOVARA</Text></View>
-          <View style={styles.previewPill}><View style={styles.dot} /><Text style={styles.previewText}>PREVIEW MODE</Text></View>
+          <View style={styles.previewPill}><View style={styles.dot} /><Text style={styles.previewText}>{t("preview")}</Text></View>
         </View>
         <Text style={styles.kicker}>{eyebrow}</Text>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
         <View style={styles.summary}>
           <View style={styles.summaryIcon}><Ionicons name={icon} size={22} color={theme.colors.goldDeep} /></View>
-          <View style={{ flex: 1 }}><Text style={styles.summaryTitle}>{editable ? "Your personal space" : "Explore this workspace"}</Text><Text style={styles.summarySub}>{editable ? `${completed} of ${records.length} completed` : `${records.length} capabilities to explore`}</Text></View>
+          <View style={{ flex: 1 }}><Text style={styles.summaryTitle}>{editable ? t("items") : t("tools")}</Text><Text style={styles.summarySub}>{editable ? `${completed} of ${records.length} completed` : `${records.length} capabilities to explore`}</Text></View>
           <Text style={styles.summaryCount}>{records.length}</Text>
         </View>
         {editable && <View style={styles.addRow}><TextInput value={draft} onChangeText={setDraft} onSubmitEditing={addItem} placeholder={inputHint} placeholderTextColor={theme.colors.muted} style={styles.input} returnKeyType="done" /><Pressable accessibilityRole="button" accessibilityLabel="Add item" onPress={addItem} style={styles.addButton}><Ionicons name="add" size={22} color="#FFFFFF" /></Pressable></View>}
-        <View style={styles.search}><Ionicons name="search-outline" size={18} color={theme.colors.muted} /><TextInput value={query} onChangeText={setQuery} placeholder="Search this page…" placeholderTextColor={theme.colors.muted} style={styles.searchInput} /></View>
-        <View style={styles.listHeader}><Text style={styles.listTitle}>{editable ? "Your items" : "Available tools"}</Text><Text style={styles.listMeta}>{visible.length} shown</Text></View>
+        <View style={styles.search}><Ionicons name="search-outline" size={18} color={theme.colors.muted} /><TextInput value={query} onChangeText={setQuery} placeholder={t("search")} placeholderTextColor={theme.colors.muted} style={styles.searchInput} /></View>
+        <View style={styles.listHeader}><Text style={styles.listTitle}>{editable ? t("items") : t("tools")}</Text><Text style={styles.listMeta}>{visible.length} shown</Text></View>
         {visible.map((item) => (
           <Pressable key={item.id} accessibilityRole="button" accessibilityState={{ checked: item.done }} onPress={() => toggleItem(item.id)} style={styles.item}>
             <View style={[styles.itemIcon, item.done && styles.itemIconDone]}><Ionicons name={item.done ? "checkmark" : "chevron-forward"} size={18} color={item.done ? "#FFFFFF" : theme.colors.navy} /></View>
@@ -58,7 +69,7 @@ export function FeatureScreen({ eyebrow, title, description, icon, items, editab
           </Pressable>
         ))}
         {visible.length === 0 && <View style={styles.empty}><Ionicons name="search-outline" size={25} color={theme.colors.muted} /><Text style={styles.emptyText}>No matching items. Try another search.</Text></View>}
-        <View style={styles.notice}><Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} /><Text style={styles.noticeText}>{previewNote ?? "Preview data is stored only in this screen's memory. Sign-in, cloud sync, and production services are not connected yet."}</Text></View>
+        <View style={styles.notice}><Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} /><Text style={styles.noticeText}>{previewNote ?? "Your changes are saved locally on this device. Cloud sync and account-based backup are not connected yet."}</Text></View>
         <Text style={styles.footer}>NOVARA · ONE PLATFORM. INFINITE POSSIBILITIES.</Text>
       </ScrollView>
     </SafeAreaView>
