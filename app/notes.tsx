@@ -1,0 +1,2 @@
+import { FeatureScreen } from "@/components/FeatureScreen";
+export default function NotesScreen() { return <FeatureScreen eyebrow="KNOWLEDGE" title="Notes & ideas" description="Collect thoughts, meeting notes, research, and ideas in one place." icon="document-text-outline" editable inputHint="Write a note title…" items={[{title:"Quick notes",detail:"Capture an idea before it disappears"},{title:"Meeting notes",detail:"Record decisions and action items"},{title:"Research library",detail:"Keep useful references together"}]} />; }
