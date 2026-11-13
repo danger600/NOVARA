@@ -18,7 +18,7 @@ export default function SettingsScreen() {
       <View style={{flex:1}}><Text style={styles.language}>{language.native}</Text><Text style={styles.english}>{language.english}</Text></View>
       <Ionicons name={locale === language.code ? "radio-button-on" : "radio-button-off"} size={21} color={locale === language.code ? theme.colors.goldDeep : theme.colors.muted}/>
     </Pressable>)}
-    <View style={styles.notice}><Ionicons name="phone-portrait-outline" size={18} color={theme.colors.navy}/><Text style={styles.noticeText}>{messages.settings.saved}</Text></View>
+    {!storageError && <View style={styles.notice}><Ionicons name="phone-portrait-outline" size={18} color={theme.colors.navy}/><Text style={styles.noticeText}>{messages.settings.saved}</Text></View>}
     {!isReady && <Text style={styles.status}>{messages.common.loading}</Text>}
     {storageError && <Text accessibilityRole="alert" style={styles.error}>{messages.settings.savingFailed}</Text>}
   </ScrollView></SafeAreaView>;
