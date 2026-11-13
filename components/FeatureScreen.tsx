@@ -229,6 +229,6 @@ const styles = StyleSheet.create({
   retryButton: { backgroundColor: theme.colors.navy, paddingHorizontal: 14, paddingVertical: 9, borderRadius: 11 },
   retryText: { color: "#FFFFFF", fontSize: 11, fontWeight: "800" },
   saveStatus: { color: theme.colors.muted, fontSize: 10 },
-  saveError: { color: theme.colors.danger, fontSize: 11, lineHeight: 16 },
+  saveError: { color: "#B54747", fontSize: 11, lineHeight: 16 },
   footer: { color: theme.colors.muted, fontSize: 9, letterSpacing: 1.2, textAlign: "center", marginTop: 12 },
 });
