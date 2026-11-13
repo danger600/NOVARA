@@ -61,7 +61,7 @@ export default function HomeScreen() {
             <Link key={item.title} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.actionCard}>
               <View style={[styles.actionIcon, { backgroundColor: item.tint }]}><Ionicons name={item.icon} size={22} color={theme.colors.navy} /></View>
               <View style={{ flex: 1 }}><Text style={styles.actionTitle}>{item.title}</Text><Text style={styles.actionDetail}>{item.detail}</Text></View>
-              <Ionicons name="arrow-up-right" size={18} color={theme.colors.muted} />
+              <Ionicons name="arrow-up-right-box" size={18} color={theme.colors.muted} />
             </Pressable></Link>
           ))}
         </View>
