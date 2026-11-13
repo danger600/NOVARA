@@ -1,2 +1,2 @@
 import { FeatureScreen } from "@/components/FeatureScreen";
-export default function AnalyticsScreen() { return <FeatureScreen eyebrow="INSIGHTS" title="Analytics & reports" description="Understand activity, progress, and outcomes with useful reports." icon="analytics-outline" items={[{title:"Personal productivity",detail:"Review tasks and focus patterns"},{title:"Learning progress",detail:"Track completed lessons and skills"},{title:"Project health",detail:"Monitor milestones and delivery status"},{title:"Exportable reports",detail:"Prepare summaries for sharing"}]} />; }
+export default function AnalyticsScreen() { return <FeatureScreen feature="analytics" icon="analytics-outline" />; }

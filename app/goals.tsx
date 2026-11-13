@@ -1,2 +1,2 @@
 import { FeatureScreen } from "@/components/FeatureScreen";
-export default function GoalsScreen() { return <FeatureScreen eyebrow="PERSONAL GROWTH" title="Goals & habits" description="Turn long-term ambitions into small, repeatable actions." icon="flag-outline" editable inputHint="Add a goal or habit…" items={[{title:"Set a meaningful goal",detail:"Define an outcome and a target date"},{title:"Build a daily habit",detail:"Choose a small action you can repeat"},{title:"Review your progress",detail:"Adjust your plan as you learn"}]} />; }
+export default function GoalsScreen() { return <FeatureScreen feature="goals" icon="flag-outline" editable collectionKey="goals" />; }
