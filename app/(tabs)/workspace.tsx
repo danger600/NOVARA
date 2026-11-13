@@ -3,29 +3,38 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, Text, View, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
+import { useI18n } from "@/lib/i18n";
 
 const modules = [
-  { title: "Tasks & focus", detail: "Priorities and action lists", icon: "checkbox-outline" as const, href: "/tasks" as const },
-  { title: "Notes & ideas", detail: "Capture and organize knowledge", icon: "document-text-outline" as const, href: "/notes" as const },
-  { title: "Goals & habits", detail: "Build momentum over time", icon: "flag-outline" as const, href: "/goals" as const },
-  { title: "Calendar", detail: "Events and planning", icon: "calendar-outline" as const, href: "/calendar" as const },
-  { title: "Learning studio", detail: "Skills and study paths", icon: "school-outline" as const, href: "/learning" as const },
-  { title: "Business hub", detail: "Teams and operations", icon: "briefcase-outline" as const, href: "/business" as const },
-  { title: "NOVARA AI", detail: "Intelligent workflows (planned)", icon: "sparkles-outline" as const, href: "/ai" as const },
-  { title: "Analytics", detail: "Progress and reports", icon: "analytics-outline" as const, href: "/analytics" as const },
-  { title: "Messages", detail: "Collaboration (planned)", icon: "chatbubbles-outline" as const, href: "/messages" as const },
-  { title: "Notifications", detail: "Updates and reminders", icon: "notifications-outline" as const, href: "/notifications" as const },
-  { title: "Settings", detail: "Preferences and controls", icon: "settings-outline" as const, href: "/settings" as const },
-  { title: "Help center", detail: "Guides and support", icon: "help-circle-outline" as const, href: "/help" as const },
-];
+  { id: "tasks", href: "/tasks", icon: "checkbox-outline" as const },
+  { id: "notes", href: "/notes", icon: "document-text-outline" as const },
+  { id: "goals", href: "/goals", icon: "flag-outline" as const },
+  { id: "calendar", href: "/calendar", icon: "calendar-outline" as const },
+  { id: "learning", href: "/learning", icon: "school-outline" as const },
+  { id: "business", href: "/business", icon: "briefcase-outline" as const },
+  { id: "ai", href: "/ai", icon: "sparkles-outline" as const },
+  { id: "analytics", href: "/analytics", icon: "analytics-outline" as const },
+  { id: "messages", href: "/messages", icon: "chatbubbles-outline" as const },
+  { id: "notifications", href: "/notifications", icon: "notifications-outline" as const },
+  { id: "settings", href: "/settings", icon: "settings-outline" as const },
+  { id: "help", href: "/help", icon: "help-circle-outline" as const },
+] as const;
 
 export default function WorkspaceScreen() {
+  const { messages } = useI18n();
   return <SafeAreaView style={styles.safe} edges={["top"]}><ScrollView contentContainerStyle={styles.content}>
     <View style={styles.brand}><View style={styles.brandIcon}><Ionicons name="aperture" size={18} color={theme.colors.gold} /></View><Text style={styles.brandText}>NOVARA</Text></View>
-    <Text style={styles.kicker}>YOUR DIGITAL HQ</Text><Text style={styles.title}>Workspace</Text><Text style={styles.sub}>Your tools for planning, learning, creating, and working — organized in one place.</Text>
-    <View style={styles.banner}><Ionicons name="layers-outline" size={25} color={theme.colors.gold} /><View style={{flex:1}}><Text style={styles.bannerTitle}>One connected workspace</Text><Text style={styles.bannerText}>Open a module to explore its current capabilities.</Text></View></View>
-    <View style={styles.grid}>{modules.map((item) => <Link key={item.title} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.card}><View style={styles.cardIcon}><Ionicons name={item.icon} size={21} color={theme.colors.navy} /></View><Text style={styles.cardTitle}>{item.title}</Text><Text style={styles.cardDetail}>{item.detail}</Text><View style={styles.cardArrow}><Ionicons name="arrow-up-right" size={16} color={theme.colors.goldDeep} /></View></Pressable></Link>)}</View>
-    <View style={styles.tip}><Ionicons name="shield-checkmark-outline" size={18} color={theme.colors.navy} /><Text style={styles.tipText}>Some modules are interactive previews. Cloud sync, authentication, messaging, and AI services are not connected yet.</Text></View>
+    <Text style={styles.kicker}>{messages.workspace.kicker}</Text><Text style={styles.title}>{messages.workspace.title}</Text><Text style={styles.sub}>{messages.workspace.subtitle}</Text>
+    <View style={styles.banner}><Ionicons name="layers-outline" size={25} color={theme.colors.gold} /><View style={{flex:1}}><Text style={styles.bannerTitle}>{messages.workspace.bannerTitle}</Text><Text style={styles.bannerText}>{messages.workspace.bannerText}</Text></View></View>
+    <View style={styles.grid}>{modules.map((item) => {
+      const copy = messages.workspace.modules[item.id];
+      return <Link key={item.id} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.card}>
+        <View style={styles.cardIcon}><Ionicons name={item.icon} size={21} color={theme.colors.navy} /></View>
+        <Text style={styles.cardTitle}>{copy.title}</Text><Text style={styles.cardDetail}>{copy.detail}</Text>
+        <View style={styles.cardArrow}><Ionicons name="arrow-up-right" size={16} color={theme.colors.goldDeep} /></View>
+      </Pressable></Link>;
+    })}</View>
+    <View style={styles.tip}><Ionicons name="shield-checkmark-outline" size={18} color={theme.colors.navy} /><Text style={styles.tipText}>{messages.workspace.tip}</Text></View>
   </ScrollView></SafeAreaView>;
 }
 const styles = StyleSheet.create({
