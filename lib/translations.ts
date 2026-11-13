@@ -118,7 +118,7 @@ const en: Messages = {
   settings: {
     kicker: "PREFERENCES", title: "Language & settings", subtitle: "Choose the language used across NOVARA.",
     english: "English", kinyarwanda: "Kinyarwanda", french: "French",
-    saved: "Your language choice is saved on this device.", savingFailed: "Your language changed for this session, but the preference could not be saved.",
+    saved: "Your language choice is saved on this device.", savingFailed: "The saved language preference could not be read or updated. NOVARA is using a safe fallback for this session.",
   },
   features: {
     tasks: feature("PRODUCTIVITY", "Tasks & focus", "Capture priorities, make progress, and keep your next action visible.", "tasks", "What needs to get done?", "Your tasks are stored locally on this device.", [
@@ -253,7 +253,7 @@ const rw: Messages = {
   settings: {
     kicker: "IBYO UKUNDA", title: "Ururimi n'igenamiterere", subtitle: "Hitamo ururimi ukoresha muri NOVARA.",
     english: "Icyongereza", kinyarwanda: "Ikinyarwanda", french: "Igifaransa",
-    saved: "Ururimi wahisemo rubikwa kuri iki gikoresho.", savingFailed: "Ururimi rwahindutse muri iyi nshuro, ariko ntirwabashije kubikwa.",
+    saved: "Ururimi wahisemo rubikwa kuri iki gikoresho.", savingFailed: "Ibyerekeye ururimi ntibyashoboye gusomwa cyangwa kubikwa. NOVARA iri gukoresha ururimi rw'ibanze muri iyi nshuro.",
   },
   features: {
     tasks: feature("GUKORA NEZA", "Imirimo no kwibanda", "Andika iby'ingenzi, ukore intambwe ku yindi kandi umenye igikurikiraho.", "tasks", "Ni iki ugomba gukora?", "Imirimo yawe ibikwa kuri iki gikoresho.", [
@@ -388,7 +388,7 @@ const fr: Messages = {
   settings: {
     kicker: "PRÉFÉRENCES", title: "Langue et paramètres", subtitle: "Choisissez la langue utilisée dans NOVARA.",
     english: "Anglais", kinyarwanda: "Kinyarwanda", french: "Français",
-    saved: "Votre choix de langue est enregistré sur cet appareil.", savingFailed: "La langue a changé pour cette session, mais la préférence n'a pas pu être enregistrée.",
+    saved: "Votre choix de langue est enregistré sur cet appareil.", savingFailed: "La préférence linguistique n'a pas pu être lue ou mise à jour. NOVARA utilise une langue de secours pour cette session.",
   },
   features: {
     tasks: feature("PRODUCTIVITÉ", "Tâches et concentration", "Notez vos priorités, avancez et gardez votre prochaine action à portée de vue.", "tasks", "Que faut-il faire ?", "Vos tâches sont enregistrées sur cet appareil.", [
