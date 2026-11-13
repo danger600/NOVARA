@@ -2,7 +2,7 @@ name: NOVARA quality checks
 
 on:
   push:
-    branches: [main]
+    branches: [main, "feat/**"]
   pull_request:
     branches: [main]
 
@@ -18,6 +18,10 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Verify Expo SDK dependency compatibility
+        run: npx expo install --check
+      - name: Run storage and localization tests
+        run: npm test
       - name: TypeScript check
         run: npm run typecheck
       - name: Build web app
