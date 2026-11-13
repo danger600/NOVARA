@@ -45,7 +45,7 @@ const english = {
   settingsSaved: "This preview stores changes only on this device. It does not provide cloud backup or account sync.",
 } as const;
 
-type MessageKey = keyof typeof english;
+export type MessageKey = keyof typeof english;
 const translations: Record<Locale, Record<MessageKey, string>> = {
   en: english,
   rw: {
