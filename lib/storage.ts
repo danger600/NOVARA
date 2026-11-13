@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { createStorageRepository, type CollectionName, type StorageAdapter, type StorageErrorCode, StorageRepositoryError } from "./storage-repository.mjs";
-import type { StoredRecord } from "./storage-codec.mjs";
+import { createStorageRepository, type CollectionName, type StorageAdapter, type StorageErrorCode, StorageRepositoryError } from "./storage-repository";
+import type { StoredRecord } from "./storage-codec";
 
 const adapter: StorageAdapter = {
   getItem: (key) => AsyncStorage.getItem(key),
