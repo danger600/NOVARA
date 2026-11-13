@@ -18,7 +18,7 @@ export type Messages = {
     preview: string; search: string; items: string; tools: string; add: string;
     noResults: string; retry: string; loading: string; loadError: string; saveError: string;
     saving: string; localOnly: string; userAdded: string; shown: string; completed: string;
-    capabilities: string; searchAccessibility: string; addAccessibility: string;
+    capabilities: string; searchAccessibility: string; addAccessibility: string; footer: string;
   };
   home: {
     eyebrow: string; title: string; description: string; explore: string; overview: string;
