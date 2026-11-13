@@ -14,7 +14,7 @@ export default function SettingsScreen() {
   return <SafeAreaView style={styles.safe} edges={["top"]}><ScrollView contentContainerStyle={styles.content}>
     <View style={styles.brand}><Ionicons name="aperture" size={22} color={theme.colors.goldDeep}/><Text style={styles.brandText}>NOVARA</Text></View>
     <Text style={styles.kicker}>{messages.settings.kicker}</Text><Text style={styles.title}>{messages.settings.title}</Text><Text style={styles.sub}>{messages.settings.subtitle}</Text>
-    {languages.map((language) => <Pressable key={language.code} onPress={() => { void setLocale(language.code); }} style={styles.option} accessibilityRole="radio" accessibilityState={{ selected: locale === language.code }}>
+    {languages.map((language) => <Pressable key={language.code} onPress={() => { void setLocale(language.code); }} disabled={!isReady} style={styles.option} accessibilityRole="radio" accessibilityState={{ selected: locale === language.code }}>
       <View style={{flex:1}}><Text style={styles.language}>{language.native}</Text><Text style={styles.english}>{language.english}</Text></View>
       <Ionicons name={locale === language.code ? "radio-button-on" : "radio-button-off"} size={21} color={locale === language.code ? theme.colors.goldDeep : theme.colors.muted}/>
     </Pressable>)}
