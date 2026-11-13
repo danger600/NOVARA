@@ -31,7 +31,7 @@ export default function WorkspaceScreen() {
       return <Link key={item.id} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.card}>
         <View style={styles.cardIcon}><Ionicons name={item.icon} size={21} color={theme.colors.navy} /></View>
         <Text style={styles.cardTitle}>{copy.title}</Text><Text style={styles.cardDetail}>{copy.detail}</Text>
-        <View style={styles.cardArrow}><Ionicons name="arrow-up-right" size={16} color={theme.colors.goldDeep} /></View>
+        <View style={styles.cardArrow}><Ionicons name="arrow-up-right-box" size={16} color={theme.colors.goldDeep} /></View>
       </Pressable></Link>;
     })}</View>
     <View style={styles.tip}><Ionicons name="shield-checkmark-outline" size={18} color={theme.colors.navy} /><Text style={styles.tipText}>{messages.workspace.tip}</Text></View>
