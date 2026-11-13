@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { getLocales } from "expo-localization";
 import { loadPreference, savePreference } from "@/lib/storage";
-import { resolveLocale, type Locale } from "@/lib/locale-utils.mjs";
+import { resolveLocale, type Locale } from "@/lib/locale-utils";
 import { dictionaries, type Messages } from "@/lib/translations";
 
 export type { Locale };
