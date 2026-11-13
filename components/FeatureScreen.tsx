@@ -1,76 +1,193 @@
 import { useEffect, useMemo, useState } from "react";
-import { readCollection, writeCollection, type StoredRecord } from "@/lib/storage";
-import { useI18n } from "@/lib/i18n";
 import { Ionicons } from "@expo/vector-icons";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
+import { loadCollection, saveCollection, type StoredRecord } from "@/lib/storage";
+import { useI18n } from "@/lib/i18n";
+import type { FeatureId } from "@/lib/translations";
 
-type FeatureItem = { title: string; detail: string };
-type Props = {
-  eyebrow: string;
-  title: string;
-  description: string;
-  icon: keyof typeof Ionicons.glyphMap;
-  items: FeatureItem[];
-  editable?: boolean;
-  inputHint?: string;
-  previewNote?: string;
-};
+type Props = { featureId: FeatureId; icon: keyof typeof Ionicons.glyphMap };
 
-export function FeatureScreen({ eyebrow, title, description, icon, items, editable = false, inputHint = "Add a new item…", previewNote }: Props) {
-  const [records, setRecords] = useState<StoredRecord[]>(() => items.map((item, index) => ({ ...item, id: String(index), done: false })));
-  const [loaded, setLoaded] = useState(false);
-  const { t } = useI18n();
-  const storageKey = `collection-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-  useEffect(() => {
-    let active = true;
-    readCollection(storageKey).then((saved) => { if (active && saved) setRecords(saved); }).finally(() => { if (active) setLoaded(true); });
-    return () => { active = false; };
-  }, [storageKey]);
-  useEffect(() => { if (loaded) writeCollection(storageKey, records).catch(() => undefined); }, [loaded, records, storageKey]);
+export function FeatureScreen({ featureId, icon }: Props) {
+  const { messages } = useI18n();
+  const copy = messages.features[featureId];
+  const collection = copy.collection;
+  const editable = collection !== null;
+  const sampleRecords = useMemo<StoredRecord[]>(
+    () => copy.items.map((item) => ({ ...item, done: false, sample: true })),
+    [copy.items],
+  );
+  const [records, setRecords] = useState<StoredRecord[]>(() => editable ? [] : sampleRecords);
+  const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(editable ? "loading" : "ready");
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "error">("idle");
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [query, setQuery] = useState("");
   const [draft, setDraft] = useState("");
-  const visible = useMemo(() => records.filter((item) => (item.title + " " + item.detail).toLowerCase().includes(query.toLowerCase())), [records, query]);
+
+  useEffect(() => {
+    if (!collection) {
+      setRecords(sampleRecords);
+      setLoadState("ready");
+      return;
+    }
+
+    let active = true;
+    setLoadState("loading");
+    setSaveState("idle");
+    loadCollection(collection, sampleRecords)
+      .then((saved) => {
+        if (!active) return;
+        const legacySampleIds = new Map<string, string>(
+          sampleRecords.map((sample, index): [string, string] => [String(index), sample.id]),
+        );
+        const savedSamples = new Map<string, StoredRecord>(
+          saved
+            .filter((item) => item.sample || legacySampleIds.has(item.id))
+            .map((item): [string, StoredRecord] => [item.sample ? item.id : legacySampleIds.get(item.id)!, item]),
+        );
+        const userItems = saved.filter((item) => !item.sample && !legacySampleIds.has(item.id));
+        const translatedSamples = sampleRecords.map((sample) => ({
+          ...sample,
+          done: savedSamples.get(sample.id)?.done ?? false,
+        }));
+        setRecords([...translatedSamples, ...userItems]);
+        setLoadState("ready");
+      })
+      .catch(() => {
+        if (active) setLoadState("error");
+      });
+    return () => { active = false; };
+  }, [collection, sampleRecords, loadAttempt]);
+
+  useEffect(() => {
+    if (!collection || loadState !== "ready") return;
+    let active = true;
+    setSaveState("saving");
+    saveCollection(collection, records)
+      .then(() => { if (active) setSaveState("idle"); })
+      .catch(() => { if (active) setSaveState("error"); });
+    return () => { active = false; };
+  }, [collection, records, loadState]);
+
+  const visible = useMemo(
+    () => records.filter((item) => (item.title + " " + item.detail).toLowerCase().includes(query.toLowerCase())),
+    [records, query],
+  );
   const completed = records.filter((item) => item.done).length;
 
   const addItem = () => {
     const value = draft.trim();
-    if (!value) return;
-    setRecords((current) => [{ id: String(Date.now()), title: value, detail: "Saved on this device", done: false }, ...current]);
+    if (!value || !collection || loadState !== "ready") return;
+    setRecords((current) => [{
+      id: `user-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      title: value,
+      detail: messages.common.userAdded,
+      done: false,
+      sample: false,
+    }, ...current]);
     setDraft("");
   };
 
-  const toggleItem = (id: string) => setRecords((current) => current.map((item) => item.id === id ? { ...item, done: !item.done } : item));
+  const toggleItem = (id: string) => {
+    if (!editable || loadState !== "ready") return;
+    setRecords((current) => current.map((item) => item.id === id ? { ...item, done: !item.done } : item));
+  };
+
+  const completedLabel = messages.common.completed
+    .replace("{completed}", String(completed))
+    .replace("{total}", String(records.length));
+  const shownLabel = messages.common.shown.replace("{count}", String(visible.length));
+  const capabilityLabel = messages.common.capabilities.replace("{count}", String(records.length));
 
   return (
     <SafeAreaView style={styles.safe} edges={["top"]}>
       <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
           <View style={styles.brand}><View style={styles.brandIcon}><Ionicons name="aperture" size={18} color={theme.colors.gold} /></View><Text style={styles.brandText}>NOVARA</Text></View>
-          <View style={styles.previewPill}><View style={styles.dot} /><Text style={styles.previewText}>{t("preview")}</Text></View>
+          <View style={styles.previewPill}><View style={styles.dot} /><Text style={styles.previewText}>{messages.common.preview}</Text></View>
         </View>
-        <Text style={styles.kicker}>{eyebrow}</Text>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
-        <View style={styles.summary}>
-          <View style={styles.summaryIcon}><Ionicons name={icon} size={22} color={theme.colors.goldDeep} /></View>
-          <View style={{ flex: 1 }}><Text style={styles.summaryTitle}>{editable ? t("items") : t("tools")}</Text><Text style={styles.summarySub}>{editable ? `${completed} of ${records.length} completed` : `${records.length} capabilities to explore`}</Text></View>
-          <Text style={styles.summaryCount}>{records.length}</Text>
-        </View>
-        {editable && <View style={styles.addRow}><TextInput value={draft} onChangeText={setDraft} onSubmitEditing={addItem} placeholder={inputHint} placeholderTextColor={theme.colors.muted} style={styles.input} returnKeyType="done" /><Pressable accessibilityRole="button" accessibilityLabel="Add item" onPress={addItem} style={styles.addButton}><Ionicons name="add" size={22} color="#FFFFFF" /></Pressable></View>}
-        <View style={styles.search}><Ionicons name="search-outline" size={18} color={theme.colors.muted} /><TextInput value={query} onChangeText={setQuery} placeholder={t("search")} placeholderTextColor={theme.colors.muted} style={styles.searchInput} /></View>
-        <View style={styles.listHeader}><Text style={styles.listTitle}>{editable ? t("items") : t("tools")}</Text><Text style={styles.listMeta}>{visible.length} shown</Text></View>
-        {visible.map((item) => (
-          <Pressable key={item.id} accessibilityRole="button" accessibilityState={{ checked: item.done }} onPress={() => toggleItem(item.id)} style={styles.item}>
-            <View style={[styles.itemIcon, item.done && styles.itemIconDone]}><Ionicons name={item.done ? "checkmark" : "chevron-forward"} size={18} color={item.done ? "#FFFFFF" : theme.colors.navy} /></View>
-            <View style={{ flex: 1 }}><Text style={[styles.itemTitle, item.done && styles.done]}>{item.title}</Text><Text style={styles.itemDetail}>{item.detail}</Text></View>
-            <Ionicons name={item.done ? "checkmark-circle" : "ellipse-outline"} size={19} color={item.done ? theme.colors.success : theme.colors.muted} />
-          </Pressable>
-        ))}
-        {visible.length === 0 && <View style={styles.empty}><Ionicons name="search-outline" size={25} color={theme.colors.muted} /><Text style={styles.emptyText}>No matching items. Try another search.</Text></View>}
-        <View style={styles.notice}><Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} /><Text style={styles.noticeText}>{previewNote ?? "Your changes are saved locally on this device. Cloud sync and account-based backup are not connected yet."}</Text></View>
-        <Text style={styles.footer}>NOVARA · ONE PLATFORM. INFINITE POSSIBILITIES.</Text>
+        <Text style={styles.kicker}>{copy.eyebrow}</Text>
+        <Text style={styles.title}>{copy.title}</Text>
+        <Text style={styles.description}>{copy.description}</Text>
+
+        {loadState === "loading" && (
+          <View style={styles.statusCard}>
+            <Ionicons name="hourglass-outline" size={20} color={theme.colors.navy} />
+            <Text style={styles.statusText}>{messages.common.loading}</Text>
+          </View>
+        )}
+        {loadState === "error" && (
+          <View style={styles.errorCard}>
+            <Ionicons name="alert-circle-outline" size={22} color="#B54747" />
+            <Text style={styles.errorText}>{messages.common.loadError}</Text>
+            <Pressable accessibilityRole="button" onPress={() => setLoadAttempt((value) => value + 1)} style={styles.retryButton}>
+              <Text style={styles.retryText}>{messages.common.retry}</Text>
+            </Pressable>
+          </View>
+        )}
+
+        {loadState === "ready" && (
+          <>
+            <View style={styles.summary}>
+              <View style={styles.summaryIcon}><Ionicons name={icon} size={22} color={theme.colors.goldDeep} /></View>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.summaryTitle}>{editable ? messages.common.items : messages.common.tools}</Text>
+                <Text style={styles.summarySub}>{editable ? completedLabel : capabilityLabel}</Text>
+              </View>
+              <Text style={styles.summaryCount}>{records.length}</Text>
+            </View>
+            {editable && (
+              <View style={styles.addRow}>
+                <TextInput value={draft} onChangeText={setDraft} onSubmitEditing={addItem} placeholder={copy.inputHint} placeholderTextColor={theme.colors.muted} style={styles.input} returnKeyType="done" accessibilityLabel={copy.inputHint} />
+                <Pressable accessibilityRole="button" accessibilityLabel={messages.common.addAccessibility} onPress={addItem} style={styles.addButton}>
+                  <Ionicons name="add" size={22} color="#FFFFFF" />
+                </Pressable>
+              </View>
+            )}
+            <View style={styles.search}>
+              <Ionicons name="search-outline" size={18} color={theme.colors.muted} />
+              <TextInput value={query} onChangeText={setQuery} placeholder={messages.common.search} placeholderTextColor={theme.colors.muted} style={styles.searchInput} accessibilityLabel={messages.common.searchAccessibility} />
+            </View>
+            <View style={styles.listHeader}>
+              <Text style={styles.listTitle}>{editable ? messages.common.items : messages.common.tools}</Text>
+              <Text style={styles.listMeta}>{shownLabel}</Text>
+            </View>
+            {visible.map((item) => (
+              <Pressable key={item.id} accessibilityRole="button" accessibilityState={{ checked: item.done }} onPress={() => toggleItem(item.id)} style={styles.item}>
+                <View style={[styles.itemIcon, item.done && styles.itemIconDone]}>
+                  <Ionicons name={item.done ? "checkmark" : "chevron-forward"} size={18} color={item.done ? "#FFFFFF" : theme.colors.navy} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={[styles.itemTitle, item.done && styles.done]}>{item.title}</Text>
+                  <Text style={styles.itemDetail}>{item.detail}</Text>
+                </View>
+                <Ionicons name={item.done ? "checkmark-circle" : "ellipse-outline"} size={19} color={item.done ? theme.colors.success : theme.colors.muted} />
+              </Pressable>
+            ))}
+            {visible.length === 0 && (
+              <View style={styles.empty}>
+                <Ionicons name="search-outline" size={25} color={theme.colors.muted} />
+                <Text style={styles.emptyText}>{messages.common.noResults}</Text>
+              </View>
+            )}
+            {editable && (
+              <View style={styles.notice}>
+                <Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} />
+                <Text style={styles.noticeText}>{messages.common.localOnly}</Text>
+              </View>
+            )}
+            {!editable && (
+              <View style={styles.notice}>
+                <Ionicons name="information-circle-outline" size={18} color={theme.colors.navy} />
+                <Text style={styles.noticeText}>{copy.previewNote}</Text>
+              </View>
+            )}
+            {saveState === "saving" && <Text style={styles.saveStatus}>{messages.common.saving}</Text>}
+            {saveState === "error" && <Text accessibilityRole="alert" style={styles.saveError}>{messages.common.saveError}</Text>}
+          </>
+        )}
+        <Text style={styles.footer}>{messages.common.footer}</Text>
       </ScrollView>
     </SafeAreaView>
   );
@@ -112,5 +229,13 @@ const styles = StyleSheet.create({
   emptyText: { color: theme.colors.muted, fontSize: 11 },
   notice: { flexDirection: "row", gap: 9, alignItems: "flex-start", backgroundColor: "#E9F0FA", borderRadius: 14, padding: 13, marginTop: 4 },
   noticeText: { flex: 1, color: theme.colors.navy, fontSize: 10, lineHeight: 16 },
+  statusCard: { flexDirection: "row", gap: 10, alignItems: "center", backgroundColor: theme.colors.surface, borderRadius: 14, padding: 16 },
+  statusText: { color: theme.colors.muted, fontSize: 12 },
+  errorCard: { backgroundColor: "#FFF0EF", borderRadius: 15, padding: 16, gap: 10, alignItems: "flex-start" },
+  errorText: { color: theme.colors.text, fontSize: 12, lineHeight: 18 },
+  retryButton: { backgroundColor: theme.colors.navy, paddingHorizontal: 14, paddingVertical: 9, borderRadius: 11 },
+  retryText: { color: "#FFFFFF", fontSize: 11, fontWeight: "800" },
+  saveStatus: { color: theme.colors.muted, fontSize: 10 },
+  saveError: { color: "#B54747", fontSize: 11, lineHeight: 16 },
   footer: { color: theme.colors.muted, fontSize: 9, letterSpacing: 1.2, textAlign: "center", marginTop: 12 },
 });

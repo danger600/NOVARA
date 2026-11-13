@@ -2,21 +2,22 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
-
-const rows = [
-  { icon: "person-outline" as const, title: "Personal details" },
-  { icon: "shield-checkmark-outline" as const, title: "Privacy & security" },
-  { icon: "notifications-outline" as const, title: "Notifications" },
-  { icon: "help-circle-outline" as const, title: "Help & support" },
-];
+import { useI18n } from "@/lib/i18n";
 
 export default function ProfileScreen() {
+  const { messages } = useI18n();
+  const rows = [
+    { icon: "person-outline" as const, title: messages.profile.personal },
+    { icon: "shield-checkmark-outline" as const, title: messages.profile.privacy },
+    { icon: "notifications-outline" as const, title: messages.profile.notifications },
+    { icon: "help-circle-outline" as const, title: messages.profile.help },
+  ];
   return <SafeAreaView style={styles.safe} edges={["top"]}><ScrollView contentContainerStyle={styles.content}>
-    <Text style={styles.kicker}>ACCOUNT</Text><Text style={styles.title}>Your profile</Text>
-    <View style={styles.profileCard}><View style={styles.avatar}><Ionicons name="person" size={30} color={theme.colors.gold} /></View><Text style={styles.name}>Welcome to NOVARA</Text><Text style={styles.email}>Your personal profile will appear here</Text><View style={styles.tag}><Text style={styles.tagText}>GUEST PREVIEW</Text></View></View>
-    <Text style={styles.section}>PREFERENCES</Text>
+    <Text style={styles.kicker}>{messages.profile.kicker}</Text><Text style={styles.title}>{messages.profile.title}</Text>
+    <View style={styles.profileCard}><View style={styles.avatar}><Ionicons name="person" size={30} color={theme.colors.gold} /></View><Text style={styles.name}>{messages.profile.welcome}</Text><Text style={styles.email}>{messages.profile.placeholder}</Text><View style={styles.tag}><Text style={styles.tagText}>{messages.profile.guest}</Text></View></View>
+    <Text style={styles.section}>{messages.profile.preferences}</Text>
     {rows.map((row) => <View key={row.title} style={styles.row}><Ionicons name={row.icon} size={20} color={theme.colors.navy} /><Text style={styles.rowText}>{row.title}</Text><Ionicons name="chevron-forward" size={17} color={theme.colors.muted} /></View>)}
-    <Text style={styles.disclaimer}>Account management and secure sign-in will be implemented after the authentication requirements are approved.</Text>
+    <Text style={styles.disclaimer}>{messages.profile.disclaimer}</Text>
   </ScrollView></SafeAreaView>;
 }
 const styles = StyleSheet.create({
