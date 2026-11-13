@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "build:web": "expo export -p web",
-    "test": "node --test tests/storage.test.mjs"
+    "test": "node --test tests/storage.test.cjs"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",
