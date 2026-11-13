@@ -38,11 +38,13 @@ export function FeatureScreen({ featureId, icon }: Props) {
     loadCollection(collection, sampleRecords)
       .then((saved) => {
         if (!active) return;
-        const legacySampleIds = new Map(sampleRecords.map((sample, index) => [String(index), sample.id]));
-        const savedSamples = new Map(
+        const legacySampleIds = new Map<string, string>(
+          sampleRecords.map((sample, index): [string, string] => [String(index), sample.id]),
+        );
+        const savedSamples = new Map<string, StoredRecord>(
           saved
             .filter((item) => item.sample || legacySampleIds.has(item.id))
-            .map((item) => [item.sample ? item.id : legacySampleIds.get(item.id)!, item]),
+            .map((item): [string, StoredRecord] => [item.sample ? item.id : legacySampleIds.get(item.id)!, item]),
         );
         const userItems = saved.filter((item) => !item.sample && !legacySampleIds.has(item.id));
         const translatedSamples = sampleRecords.map((sample) => ({
