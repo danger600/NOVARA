@@ -80,7 +80,7 @@ export function FeatureScreen({ featureId, icon }: Props) {
     const value = draft.trim();
     if (!value || !collection || loadState !== "ready") return;
     setRecords((current) => [{
-      id: `user-${Date.now()}-${current.length}`,
+      id: `user-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       title: value,
       detail: messages.common.userAdded,
       done: false,
@@ -119,7 +119,7 @@ export function FeatureScreen({ featureId, icon }: Props) {
         )}
         {loadState === "error" && (
           <View style={styles.errorCard}>
-            <Ionicons name="alert-circle-outline" size={22} color={theme.colors.danger} />
+            <Ionicons name="alert-circle-outline" size={22} color="#B54747" />
             <Text style={styles.errorText}>{messages.common.loadError}</Text>
             <Pressable accessibilityRole="button" onPress={() => setLoadAttempt((value) => value + 1)} style={styles.retryButton}>
               <Text style={styles.retryText}>{messages.common.retry}</Text>
