@@ -30,5 +30,5 @@ const styles=StyleSheet.create({
   sub:{fontSize:13,color:theme.colors.muted,marginBottom:8},option:{backgroundColor:theme.colors.surface,borderWidth:1,borderColor:theme.colors.border,borderRadius:15,padding:16,flexDirection:"row",alignItems:"center"},
   language:{fontSize:14,fontWeight:"800",color:theme.colors.text},english:{fontSize:11,color:theme.colors.muted,marginTop:4},
   notice:{flexDirection:"row",gap:10,padding:14,borderRadius:14,backgroundColor:"#E9F0FA"},noticeText:{flex:1,color:theme.colors.navy,fontSize:11,lineHeight:17},
-  status:{fontSize:11,color:theme.colors.muted},error:{fontSize:11,color:theme.colors.danger,lineHeight:17},
+  status:{fontSize:11,color:theme.colors.muted},error:{fontSize:11,color:"#B54747",lineHeight:17},
 });
