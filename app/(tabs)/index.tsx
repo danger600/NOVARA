@@ -35,7 +35,7 @@ export default function HomeScreen() {
         <View style={styles.hero}>
           <View style={styles.heroGlow} />
           <Text style={styles.eyebrow}>{messages.home.eyebrow}</Text>
-          <Text style={styles.heroTitle}>Make room for{ "\n" }what's next.</Text>
+          <Text style={styles.heroTitle}>{messages.home.title}</Text>
           <Text style={styles.heroCopy}>{messages.home.description}</Text>
           <Link href="/discover" asChild><Pressable accessibilityRole="button" style={styles.heroButton}>
             <Text style={styles.heroButtonText}>{messages.home.explore}</Text>
