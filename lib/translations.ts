@@ -66,7 +66,7 @@ const en: Messages = {
     saveError: "Your changes could not be saved on this device. Check available storage and try again.",
     saving: "Saving…", localOnly: "Saved only on this device. Cloud sync and account-based backup are not connected.",
     userAdded: "Added by you", shown: "{count} shown", completed: "{completed} of {total} completed",
-    capabilities: "{count} capabilities to explore", searchAccessibility: "Search this page", addAccessibility: "Add item",
+    capabilities: "{count} capabilities to explore", searchAccessibility: "Search this page", addAccessibility: "Add item", footer: "NOVARA · ONE PLATFORM. INFINITE POSSIBILITIES.",
   },
   home: {
     eyebrow: "YOUR PERSONAL SPACE", title: "Make room for\nwhat's next.",
@@ -201,7 +201,7 @@ const rw: Messages = {
     saveError: "Impinduka zawe ntizabitswe kuri iki gikoresho. Reba umwanya uhari wongere ugerageze.",
     saving: "Turabika…", localOnly: "Bibikwa kuri iki gikoresho gusa. Nta kubika kuri murandasi cyangwa kuri konti bihari.",
     userAdded: "Wowe ni wowe wabyongereyeho", shown: "Hagaragajwe {count}", completed: "{completed} kuri {total} byarangiye",
-    capabilities: "Ibikorwa {count} ushobora kureba", searchAccessibility: "Shakisha kuri uru rupapuro", addAccessibility: "Ongeraho ikintu",
+    capabilities: "Ibikorwa {count} ushobora kureba", searchAccessibility: "Shakisha kuri uru rupapuro", addAccessibility: "Ongeraho ikintu", footer: "NOVARA · URUBUGA RUMWE. AMAHIRWE ATAGIRA IHEREZO.",
   },
   home: {
     eyebrow: "AHO WIKORERA", title: "Tegura umwanya w'ibizaza.",
@@ -336,7 +336,7 @@ const fr: Messages = {
     saveError: "Vos modifications n'ont pas pu être enregistrées sur cet appareil. Vérifiez l'espace disponible puis réessayez.",
     saving: "Enregistrement…", localOnly: "Enregistré sur cet appareil uniquement. La synchronisation cloud et la sauvegarde de compte ne sont pas disponibles.",
     userAdded: "Ajouté par vous", shown: "{count} affiché(s)", completed: "{completed} sur {total} terminé(s)",
-    capabilities: "{count} fonctionnalités à découvrir", searchAccessibility: "Rechercher sur cette page", addAccessibility: "Ajouter un élément",
+    capabilities: "{count} fonctionnalités à découvrir", searchAccessibility: "Rechercher sur cette page", addAccessibility: "Ajouter un élément", footer: "NOVARA · UNE PLATEFORME. DES POSSIBILITÉS INFINIES.",
   },
   home: {
     eyebrow: "VOTRE ESPACE PERSONNEL", title: "Faites place\nà la suite.",
