@@ -3,17 +3,20 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, Text, View, Pressable, useWindowDimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
+import { useI18n } from "@/lib/i18n";
 
-const quickActions = [
-  { icon: "sparkles-outline" as const, title: "AI Assistant", detail: "Think, create and explore", tint: "#F1EBDD", href: "/ai" as const },
-  { icon: "book-outline" as const, title: "Learning", detail: "Grow your knowledge", tint: "#E9F0FA", href: "/learning" as const },
-  { icon: "layers-outline" as const, title: "Projects", detail: "Bring ideas to life", tint: "#ECEBFA", href: "/business" as const },
-  { icon: "analytics-outline" as const, title: "Insights", detail: "See your progress", tint: "#E7F2EE", href: "/analytics" as const },
-];
+
 
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const wide = width >= 760;
+  const { messages } = useI18n();
+  const quickActions = [
+    { icon: "sparkles-outline" as const, title: messages.home.ai, detail: messages.home.aiDetail, tint: "#F1EBDD", href: "/ai" as const },
+    { icon: "book-outline" as const, title: messages.home.learning, detail: messages.home.learningDetail, tint: "#E9F0FA", href: "/learning" as const },
+    { icon: "layers-outline" as const, title: messages.home.projects, detail: messages.home.projectsDetail, tint: "#ECEBFA", href: "/business" as const },
+    { icon: "analytics-outline" as const, title: messages.home.insights, detail: messages.home.insightsDetail, tint: "#E7F2EE", href: "/analytics" as const },
+  ];
 
   return (
     <SafeAreaView style={styles.safe} edges={["top"]}>
@@ -23,7 +26,7 @@ export default function HomeScreen() {
             <View style={styles.brandMark}><Ionicons name="aperture" size={22} color={theme.colors.gold} /></View>
             <Text style={styles.brand}>NOVARA</Text>
           </View>
-          <Link href="/notifications" asChild><Pressable accessibilityRole="button" accessibilityLabel="Notifications" style={styles.iconButton}>
+          <Link href="/notifications" asChild><Pressable accessibilityRole="button" accessibilityLabel={messages.home.notifications} style={styles.iconButton}>
             <Ionicons name="notifications-outline" size={21} color={theme.colors.text} />
             <View style={styles.notificationDot} />
           </Pressable></Link>
@@ -31,28 +34,28 @@ export default function HomeScreen() {
 
         <View style={styles.hero}>
           <View style={styles.heroGlow} />
-          <Text style={styles.eyebrow}>YOUR PERSONAL SPACE</Text>
+          <Text style={styles.eyebrow}>{messages.home.eyebrow}</Text>
           <Text style={styles.heroTitle}>Make room for{ "\n" }what's next.</Text>
-          <Text style={styles.heroCopy}>A clearer way to learn, create, and move your ideas forward.</Text>
+          <Text style={styles.heroCopy}>{messages.home.description}</Text>
           <Link href="/discover" asChild><Pressable accessibilityRole="button" style={styles.heroButton}>
-            <Text style={styles.heroButtonText}>Explore NOVARA</Text>
+            <Text style={styles.heroButtonText}>{messages.home.explore}</Text>
             <Ionicons name="arrow-forward" size={17} color={theme.colors.navy} />
           </Pressable></Link>
           <View style={styles.heroOrb}><Ionicons name="aperture" size={76} color="#D9C58D" /></View>
         </View>
 
         <View style={styles.sectionHeading}>
-          <View><Text style={styles.sectionTitle}>Your overview</Text><Text style={styles.sectionSub}>A fresh start begins here</Text></View>
-          <Text style={styles.today}>TODAY</Text>
+          <View><Text style={styles.sectionTitle}>{messages.home.overview}</Text><Text style={styles.sectionSub}>{messages.home.freshStart}</Text></View>
+          <Text style={styles.today}>{messages.home.today}</Text>
         </View>
 
         <View style={[styles.statsRow, wide && styles.statsRowWide]}>
-          <View style={styles.statCard}><Text style={styles.statLabel}>ACTIVE PROJECTS</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>Ready when you are</Text></View>
-          <View style={styles.statCard}><Text style={styles.statLabel}>LEARNING TIME</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>Your journey starts now</Text></View>
-          <View style={styles.statCard}><Text style={styles.statLabel}>YOUR MOMENTUM</Text><Text style={styles.statValue}>New</Text><Text style={styles.statFoot}>Build your first habit</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{messages.home.activeProjects}</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>{messages.home.readyWhen}</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{messages.home.learningTime}</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>{messages.home.journeyStarts}</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{messages.home.momentum}</Text><Text style={styles.statValue}>{messages.home.newLabel}</Text><Text style={styles.statFoot}>{messages.home.buildHabit}</Text></View>
         </View>
 
-        <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>A world of possibilities</Text><Text style={styles.sectionSub}>Choose where you want to begin</Text></View></View>
+        <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>{messages.home.possibilities}</Text><Text style={styles.sectionSub}>{messages.home.chooseBegin}</Text></View></View>
         <View style={[styles.actionGrid, wide && styles.actionGridWide]}>
           {quickActions.map((item) => (
             <Link key={item.title} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.actionCard}>
@@ -63,7 +66,7 @@ export default function HomeScreen() {
           ))}
         </View>
 
-        <View style={styles.footer}><Text style={styles.footerBrand}>NOVARA</Text><Text style={styles.footerCopy}>One platform. Infinite possibilities.</Text></View>
+        <View style={styles.footer}><Text style={styles.footerBrand}>NOVARA</Text><Text style={styles.footerCopy}>{messages.home.tagline}</Text></View>
       </ScrollView>
     </SafeAreaView>
   );
