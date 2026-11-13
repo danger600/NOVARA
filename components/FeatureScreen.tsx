@@ -38,8 +38,13 @@ export function FeatureScreen({ featureId, icon }: Props) {
     loadCollection(collection, sampleRecords)
       .then((saved) => {
         if (!active) return;
-        const savedSamples = new Map(saved.filter((item) => item.sample).map((item) => [item.id, item]));
-        const userItems = saved.filter((item) => !item.sample);
+        const legacySampleIds = new Map(sampleRecords.map((sample, index) => [String(index), sample.id]));
+        const savedSamples = new Map(
+          saved
+            .filter((item) => item.sample || legacySampleIds.has(item.id))
+            .map((item) => [item.sample ? item.id : legacySampleIds.get(item.id)!, item]),
+        );
+        const userItems = saved.filter((item) => !item.sample && !legacySampleIds.has(item.id));
         const translatedSamples = sampleRecords.map((sample) => ({
           ...sample,
           done: savedSamples.get(sample.id)?.done ?? false,
@@ -180,7 +185,7 @@ export function FeatureScreen({ featureId, icon }: Props) {
             {saveState === "error" && <Text accessibilityRole="alert" style={styles.saveError}>{messages.common.saveError}</Text>}
           </>
         )}
-        <Text style={styles.footer}>NOVARA · ONE PLATFORM. INFINITE POSSIBILITIES.</Text>
+        <Text style={styles.footer}>{messages.common.footer}</Text>
       </ScrollView>
     </SafeAreaView>
   );
