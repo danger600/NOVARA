@@ -130,7 +130,6 @@ const translations: Record<Locale, Record<MessageKey, string>> = {
   },
 };
 
-export type MessageKey = keyof typeof english;
 type I18nValue = {
   locale: Locale;
   isLocaleReady: boolean;
