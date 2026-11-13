@@ -3,17 +3,18 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView, StyleSheet, Text, View, Pressable, useWindowDimensions } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { theme } from "@/constants/theme";
-
-const quickActions = [
-  { icon: "sparkles-outline" as const, title: "AI Assistant", detail: "Think, create and explore", tint: "#F1EBDD", href: "/ai" as const },
-  { icon: "book-outline" as const, title: "Learning", detail: "Grow your knowledge", tint: "#E9F0FA", href: "/learning" as const },
-  { icon: "layers-outline" as const, title: "Projects", detail: "Bring ideas to life", tint: "#ECEBFA", href: "/business" as const },
-  { icon: "analytics-outline" as const, title: "Insights", detail: "See your progress", tint: "#E7F2EE", href: "/analytics" as const },
-];
+import { useI18n } from "@/lib/i18n";
 
 export default function HomeScreen() {
   const { width } = useWindowDimensions();
+  const { t } = useI18n();
   const wide = width >= 760;
+  const quickActions = [
+    { icon: "sparkles-outline" as const, title: t("actionAI"), detail: t("actionAIDetail"), tint: "#F1EBDD", href: "/ai" as const },
+    { icon: "book-outline" as const, title: t("actionLearning"), detail: t("actionLearningDetail"), tint: "#E9F0FA", href: "/learning" as const },
+    { icon: "layers-outline" as const, title: t("actionProjects"), detail: t("actionProjectsDetail"), tint: "#ECEBFA", href: "/business" as const },
+    { icon: "analytics-outline" as const, title: t("actionInsights"), detail: t("actionInsightsDetail"), tint: "#E7F2EE", href: "/analytics" as const },
+  ];
 
   return (
     <SafeAreaView style={styles.safe} edges={["top"]}>
@@ -23,47 +24,53 @@ export default function HomeScreen() {
             <View style={styles.brandMark}><Ionicons name="aperture" size={22} color={theme.colors.gold} /></View>
             <Text style={styles.brand}>NOVARA</Text>
           </View>
-          <Link href="/notifications" asChild><Pressable accessibilityRole="button" accessibilityLabel="Notifications" style={styles.iconButton}>
-            <Ionicons name="notifications-outline" size={21} color={theme.colors.text} />
-            <View style={styles.notificationDot} />
-          </Pressable></Link>
+          <Link href="/notifications" asChild>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("notifications")} style={styles.iconButton}>
+              <Ionicons name="notifications-outline" size={21} color={theme.colors.text} />
+              <View style={styles.notificationDot} />
+            </Pressable>
+          </Link>
         </View>
 
         <View style={styles.hero}>
           <View style={styles.heroGlow} />
-          <Text style={styles.eyebrow}>YOUR PERSONAL SPACE</Text>
-          <Text style={styles.heroTitle}>Make room for{ "\n" }what's next.</Text>
-          <Text style={styles.heroCopy}>A clearer way to learn, create, and move your ideas forward.</Text>
-          <Link href="/discover" asChild><Pressable accessibilityRole="button" style={styles.heroButton}>
-            <Text style={styles.heroButtonText}>Explore NOVARA</Text>
-            <Ionicons name="arrow-forward" size={17} color={theme.colors.navy} />
-          </Pressable></Link>
+          <Text style={styles.eyebrow}>{t("homeEyebrow")}</Text>
+          <Text style={styles.heroTitle}>{t("homeHeroTitle")}</Text>
+          <Text style={styles.heroCopy}>{t("homeHeroCopy")}</Text>
+          <Link href="/discover" asChild>
+            <Pressable accessibilityRole="button" style={styles.heroButton}>
+              <Text style={styles.heroButtonText}>{t("homeExplore")}</Text>
+              <Ionicons name="arrow-forward" size={17} color={theme.colors.navy} />
+            </Pressable>
+          </Link>
           <View style={styles.heroOrb}><Ionicons name="aperture" size={76} color="#D9C58D" /></View>
         </View>
 
         <View style={styles.sectionHeading}>
-          <View><Text style={styles.sectionTitle}>Your overview</Text><Text style={styles.sectionSub}>A fresh start begins here</Text></View>
-          <Text style={styles.today}>TODAY</Text>
+          <View><Text style={styles.sectionTitle}>{t("homeOverview")}</Text><Text style={styles.sectionSub}>{t("homeOverviewSub")}</Text></View>
+          <Text style={styles.today}>{t("today")}</Text>
         </View>
 
         <View style={[styles.statsRow, wide && styles.statsRowWide]}>
-          <View style={styles.statCard}><Text style={styles.statLabel}>ACTIVE PROJECTS</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>Ready when you are</Text></View>
-          <View style={styles.statCard}><Text style={styles.statLabel}>LEARNING TIME</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>Your journey starts now</Text></View>
-          <View style={styles.statCard}><Text style={styles.statLabel}>YOUR MOMENTUM</Text><Text style={styles.statValue}>New</Text><Text style={styles.statFoot}>Build your first habit</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{t("homeActiveProjects")}</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>{t("homeReady")}</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{t("homeLearningTime")}</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>{t("homeJourney")}</Text></View>
+          <View style={styles.statCard}><Text style={styles.statLabel}>{t("homeMomentum")}</Text><Text style={styles.statValue}>—</Text><Text style={styles.statFoot}>{t("homeHabit")}</Text></View>
         </View>
 
-        <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>A world of possibilities</Text><Text style={styles.sectionSub}>Choose where you want to begin</Text></View></View>
+        <View style={styles.sectionHeading}><View><Text style={styles.sectionTitle}>{t("homePossibilities")}</Text><Text style={styles.sectionSub}>{t("homeChooseStart")}</Text></View></View>
         <View style={[styles.actionGrid, wide && styles.actionGridWide]}>
           {quickActions.map((item) => (
-            <Link key={item.title} href={item.href} asChild><Pressable accessibilityRole="button" style={styles.actionCard}>
-              <View style={[styles.actionIcon, { backgroundColor: item.tint }]}><Ionicons name={item.icon} size={22} color={theme.colors.navy} /></View>
-              <View style={{ flex: 1 }}><Text style={styles.actionTitle}>{item.title}</Text><Text style={styles.actionDetail}>{item.detail}</Text></View>
-              <Ionicons name="arrow-up-right" size={18} color={theme.colors.muted} />
-            </Pressable></Link>
+            <Link key={item.title} href={item.href} asChild>
+              <Pressable accessibilityRole="button" style={styles.actionCard}>
+                <View style={[styles.actionIcon, { backgroundColor: item.tint }]}><Ionicons name={item.icon} size={22} color={theme.colors.navy} /></View>
+                <View style={{ flex: 1 }}><Text style={styles.actionTitle}>{item.title}</Text><Text style={styles.actionDetail}>{item.detail}</Text></View>
+                <Ionicons name="arrow-up-right-box" size={18} color={theme.colors.muted} />
+              </Pressable>
+            </Link>
           ))}
         </View>
 
-        <View style={styles.footer}><Text style={styles.footerBrand}>NOVARA</Text><Text style={styles.footerCopy}>One platform. Infinite possibilities.</Text></View>
+        <View style={styles.footer}><Text style={styles.footerBrand}>NOVARA</Text><Text style={styles.footerCopy}>{t("footerTagline")}</Text></View>
       </ScrollView>
     </SafeAreaView>
   );

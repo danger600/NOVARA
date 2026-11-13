@@ -1,2 +1,2 @@
 import { FeatureScreen } from "@/components/FeatureScreen";
-export default function CalendarScreen() { return <FeatureScreen eyebrow="PLANNING" title="Calendar & schedule" description="Bring events, deadlines, and focused work sessions into one view." icon="calendar-outline" items={[{title:"Day planning",detail:"Organize today's time blocks"},{title:"Upcoming events",detail:"Keep important dates visible"},{title:"Deadline tracking",detail:"Plan backward from key milestones"},{title:"Focus sessions",detail:"Reserve uninterrupted time for deep work"}]} />; }
+export default function CalendarScreen() { return <FeatureScreen feature="calendar" icon="calendar-outline" />; }

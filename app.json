@@ -28,7 +28,17 @@
       "output": "single"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": [
+            "en",
+            "rw",
+            "fr"
+          ]
+        }
+      ]
     ]
   }
 }

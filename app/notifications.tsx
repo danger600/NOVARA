@@ -1,2 +1,2 @@
 import { FeatureScreen } from "@/components/FeatureScreen";
-export default function NotificationsScreen() { return <FeatureScreen eyebrow="UPDATES" title="Notifications" description="A central place for reminders, updates, and important activity." icon="notifications-outline" items={[{title:"Task reminders",detail:"Stay aware of upcoming priorities"},{title:"Project updates",detail:"Follow important changes"},{title:"Learning reminders",detail:"Keep your study rhythm"},{title:"Account alerts",detail:"Review important security notices"}]} />; }
+export default function NotificationsScreen() { return <FeatureScreen feature="notifications" icon="notifications-outline" />; }
