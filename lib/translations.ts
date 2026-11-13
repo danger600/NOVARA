@@ -1,4 +1,4 @@
-import type { CollectionName, StoredRecord } from "./storage-codec.mjs";
+import type { CollectionName } from "./storage-repository.mjs";
 
 export type FeatureId = "tasks" | "notes" | "goals" | "calendar" | "learning" | "business" | "ai" | "analytics" | "messages" | "notifications" | "help";
 export type FeatureItem = { id: string; title: string; detail: string };
