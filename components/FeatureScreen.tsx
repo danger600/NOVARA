@@ -18,7 +18,7 @@ export function FeatureScreen({ featureId, icon }: Props) {
     () => copy.items.map((item) => ({ ...item, done: false, sample: true })),
     [copy.items],
   );
-  const [records, setRecords] = useState<StoredRecord[]>([]);
+  const [records, setRecords] = useState<StoredRecord[]>(() => editable ? [] : sampleRecords);
   const [loadState, setLoadState] = useState<"loading" | "ready" | "error">(editable ? "loading" : "ready");
   const [saveState, setSaveState] = useState<"idle" | "saving" | "error">("idle");
   const [loadAttempt, setLoadAttempt] = useState(0);
